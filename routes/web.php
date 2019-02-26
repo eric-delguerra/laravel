@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/basket', function () {
+    return view('basket');
+});
+Route::get('/products', function () {
+    return view('products/products');
+});
+Route::get('/product/{id?}', function ($id = null) {
+//    if ($id = null) {
+//        return view('products.product', [
+//            'y'=> 'produit'
+//        ]);
+//    }
+//    else {
+        return view('products/product', [
+            'x'=> $id
+        ]);
+//    }
+});
