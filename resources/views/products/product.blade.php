@@ -4,6 +4,6 @@
 
 @section('content')
 
-    <h1> Fiche {{ $x }}  </h1>
+    <h1> Fiche produit : {{ $x }}  </h1>
 
 @endsection
