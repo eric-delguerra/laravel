@@ -9,7 +9,32 @@ class productController extends Controller
 
     public function index()
     {
-        return view('products/products');
+        $tab = [
+            [
+                'name' => 'saucisson',
+                'price' => 12,
+                'description' => 'Il est bon'
+            ],
+            [
+                'name' => 'Fromage',
+                'price' => 9,
+                'description' => 'C\'est pas mauvais'
+            ],
+            [
+                'name' => 'pain',
+                'price' => 1,
+                'description' => 'Le corps du Christ'
+            ],
+            [
+                'name' => 'Pinard',
+                'price' => 56,
+                'description' => 'Le sang du Christ'
+            ]
+        ];
+
+        return view('products/products', [
+            'Products' => $tab
+        ]);
     }
 
 

@@ -1,5 +1,5 @@
 @extends('layout')
 
 @section('content')
-    Niquel c'est ajouter !
+    Niquel c'est ajouté !
 @endsection

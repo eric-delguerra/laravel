@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -17,33 +20,21 @@
 <div class="links">
     Home</a>
 </div>
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="/">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
+<div class="links">
+    <a href="/products">Liste des produits</a>
+    <a href="/product">Produit</a>
+    <a href="/basket">Panier</a>
+    <a href="/contacts">Contact</a>
+</div>
 
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif
 
-    <div class="content">
+<div class="content">
         <div class="title m-b-md">
             @yield('content')
         </div>
-        <div class="links">
-            <a href="/products">Liste des produits</a>
-            <a href="/product">Produit</a>
-            <a href="/basket">Panier</a>
-            <a href="/contacts">Contact</a>
-        </div>
         @yield('contact')
     </div>
+ @yield('petitforeach')
 </div>
 </body>
 </html>
