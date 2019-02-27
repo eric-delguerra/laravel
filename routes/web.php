@@ -21,3 +21,8 @@ Route::get('/products', function () {
 });
 Route::resource('product', 'productController');
 Route::get('/', 'PageController@index');
+
+route::get('/contactMel', function(){
+    return view('/contact-mel');
+
+});
