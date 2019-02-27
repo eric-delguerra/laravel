@@ -25,7 +25,9 @@ class PageController extends Controller
       elseif ($id == "cedric") {
             return view('/contacts/contact-cedric');
       }
-      else return view('/welcome');
+      else {
+            return view('/welcome');
+      }
     }
 
     public function cedric(){
