@@ -21,3 +21,5 @@ Route::get('/products', function () {
 });
 Route::resource('product', 'productController');
 Route::get('/', 'PageController@index');
+
+Route :: get('/contact/cedric', 'PageController@cedric');

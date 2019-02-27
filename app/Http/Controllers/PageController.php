@@ -20,5 +20,9 @@ class PageController extends Controller
     {
         return view('/welcome');
     }
+
+    public function cedric(){
+        return view('/contact/cedric');
+    }
 }
 
