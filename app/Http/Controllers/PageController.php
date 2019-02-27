@@ -10,15 +10,22 @@ class PageController extends Controller
     {
         return view('/welcome');
     }
-    /**
-     * Show the profile for the given user.
-     *
-     * @param  int  $id
-     * @return View
-     */
-    public function store(Request $request)
+
+    public function contact($id)
     {
-        return view('/welcome');
+        if ($id == "eric") {
+            return view('contacts/contact-eric');
+        }
+      elseif ($id == "christophe") {
+            return view('contacts/contact-christophe');
+      }
+        elseif ($id == "mel") {
+            return view('/contacts/contact-mel');
+        }
+      elseif ($id == "cedric") {
+            return view('/contacts/contact-cedric');
+      }
+      else return view('/welcome');
     }
 }
 

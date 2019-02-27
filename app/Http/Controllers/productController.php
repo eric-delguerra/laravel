@@ -21,7 +21,7 @@ class productController extends Controller
 
     public function store(Request $request)
     {
-        dump($request);
+        //dump($request);
         return view('products/confirm-save-product');
     }
 

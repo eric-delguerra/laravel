@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 Route::get('/basket', function () {
     return view('orders/basket');
 });
@@ -22,7 +20,6 @@ Route::get('/products', function () {
 Route::resource('product', 'productController');
 Route::get('/', 'PageController@index');
 
-route::get('/contactMel', function(){
-    return view('/contact-mel');
+Route::get('/contacts/{id}', 'PageController@contact');
+Route::get('/contacts', 'PageController@index');
 
-});

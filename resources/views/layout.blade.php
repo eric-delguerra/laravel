@@ -12,7 +12,10 @@
 </head>
 <body>
 <div class="links">
-    <a href="/">Home</a>
+    <a href="/">
+        <img src="{{ asset('images/home.png') }}" alt="logoHome"></div>
+<div class="links">
+    Home</a>
 </div>
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
@@ -31,13 +34,15 @@
 
     <div class="content">
         <div class="title m-b-md">
-          @yield('content')
+            @yield('content')
         </div>
         <div class="links">
             <a href="/products">Liste des produits</a>
             <a href="/product">Produit</a>
             <a href="/basket">Panier</a>
+            <a href="/contacts">Contact</a>
         </div>
+        @yield('contact')
     </div>
 </div>
 </body>
