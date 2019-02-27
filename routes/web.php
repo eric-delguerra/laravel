@@ -20,3 +20,4 @@ Route::get('/products', function () {
 Route::resource('product', 'productController');
 Route::get('/', 'PageController@index');
 Route::get('/contacts/{id}', 'PageController@contact');
+Route::get('/contacts', 'PageController@index');
