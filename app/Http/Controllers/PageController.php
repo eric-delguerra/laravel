@@ -30,8 +30,5 @@ class PageController extends Controller
       }
     }
 
-    public function cedric(){
-        return view('/contact/cedric');
-    }
 }
 
