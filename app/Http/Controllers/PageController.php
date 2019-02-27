@@ -17,7 +17,7 @@ class PageController extends Controller
             return view('contacts/contact-eric');
         }
       elseif ($id == "christophe") {
-            return view('contact-christophe');
+            return view('contacts/contact-christophe');
       }
         elseif ($id == "melanie") {
             return view('contact-melanie');
