@@ -31,7 +31,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-          <h1>@yield('content')</h1>
+          @yield('content')
         </div>
         <div class="links">
             <a href="/products">Liste des produits</a>
