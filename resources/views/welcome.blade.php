@@ -2,8 +2,4 @@
 
 @section('title', 'Homepage')
 
-@section('content')
-
-    <h1> Boutique </h1>
-
-@endsection
+@section('content', 'Boutique')

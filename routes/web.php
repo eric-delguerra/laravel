@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/basket', function () {
-    return view('basket');
+    return view('orders/basket');
 });
 Route::get('/products', function () {
     return view('products/products');
