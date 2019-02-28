@@ -15,12 +15,7 @@
 </head>
 <body>
 <div class="links">
-    <a href="/">
-        <img src="{{ asset('images/home.png') }}" alt="logoHome"></div>
-<div class="links">
-    Home</a>
-</div>
-<div class="links">
+    <a href="/">Home</a>
     <a href="/products">Liste des produits</a>
     <a href="/product">Produit</a>
     <a href="/basket">Panier</a>
@@ -29,12 +24,20 @@
 
 
 <div class="content">
-        <div class="title m-b-md">
-            @yield('content')
+    <div class="title m-b-md">
+        <div class="links">
+            @yield('listContact')
         </div>
+        @yield('content')
         @yield('contact')
     </div>
  @yield('petitforeach')
 </div>
+
+
+
+
+
+
 </body>
 </html>

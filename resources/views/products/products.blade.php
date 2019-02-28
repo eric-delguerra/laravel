@@ -6,6 +6,6 @@
 
 @section('petitforeach')
     @foreach($products as $prod)
-        {{ $prod['name'] }} <br>
+        {{ $prod['name'] }}  {{ $prod['description'] }}<br>
     @endforeach
 @endsection
