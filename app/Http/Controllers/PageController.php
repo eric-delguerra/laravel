@@ -29,6 +29,29 @@ class PageController extends Controller
             return view('/welcome');
       }
     }
-
+    public function contacts()
+    {
+        $board = [
+            [
+                'name' => 'Eric',
+                'link' => '/contacts/eric'
+            ],
+            [
+                'name' => 'Melanie',
+                'link' => '/contacts/mel'
+            ],
+            [
+                'name' => 'Christophe',
+                'link' => '/contacts/christophe'
+            ],
+            [
+                'name' => 'Cedric',
+                'link' => '/contacts/cedric'
+            ]
+        ];
+        return view('contacts.ListContact', [
+            'contacts' => $board
+        ]);
+    }
 }
 

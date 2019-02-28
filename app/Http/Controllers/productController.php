@@ -33,7 +33,7 @@ class productController extends Controller
         ];
 
         return view('products/products', [
-            'Products' => $tab
+            'products' => $tab
         ]);
     }
 
