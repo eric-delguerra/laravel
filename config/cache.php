@@ -9,8 +9,8 @@ return [
     | Default Cache Store
     |--------------------------------------------------------------------------
     |
-    | This option controls the default cache connection that gets used while
-    | using this caching library. This connection is used when another is
+    | This option controls the default cache connect that gets used while
+    | using this caching library. This connect is used when another is
     | not explicitly specified when executing a given caching function.
     |
     | Supported: "apc", "array", "database", "file", "memcached", "redis"
@@ -43,7 +43,7 @@ return [
         'database' => [
             'driver' => 'database',
             'table' => 'cache',
-            'connection' => null,
+            'connect' => null,
         ],
 
         'file' => [
@@ -72,7 +72,7 @@ return [
 
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'cache',
+            'connect' => 'cache',
         ],
 
     ],

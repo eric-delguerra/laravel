@@ -67,12 +67,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | When using the "database" or "redis" session drivers, you may specify a
-    | connection that should be used to manage these sessions. This should
-    | correspond to a connection in your database configuration options.
+    | connect that should be used to manage these sessions. This should
+    | correspond to a connect in your database configuration options.
     |
     */
 
-    'connection' => env('SESSION_CONNECTION', null),
+    'connect' => env('SESSION_CONNECTION', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -161,7 +161,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | By setting this option to true, session cookies will only be sent back
-    | to the server if the browser has a HTTPS connection. This will keep
+    | to the server if the browser has a HTTPS connect. This will keep
     | the cookie from being sent to you if it can not be done securely.
     |
     */

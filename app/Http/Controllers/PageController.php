@@ -135,5 +135,9 @@ class PageController extends Controller
             'contacts' => $board
         ]);
     }
+
+    public function connect(){
+
+    }
 }
 

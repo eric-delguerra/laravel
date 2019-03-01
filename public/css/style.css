@@ -69,3 +69,10 @@ html, body {
     margin-left: 700px;
     margin-bottom: 70px;
 }
+
+.connect{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}

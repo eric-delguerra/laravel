@@ -17,6 +17,7 @@
     <a href="/product">Produit</a>
     <a href="/basket">Panier</a>
     <a href="/contacts">Contact</a>
+    <a href="/connexion">Cgit onnexion</a>
 </div>
 <div class="content">
     <div class="title m-b-md">
@@ -27,6 +28,7 @@
         @yield('contactTitle', '')
     </div>
     @yield('contact')
+    @yield('connect')
     @yield('apropos', '')
  @yield('petitforeach')
 </div>

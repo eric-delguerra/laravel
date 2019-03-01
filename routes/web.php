@@ -33,3 +33,11 @@ Route::get('/contacts/{id}', 'PageController@contact');
 Route::get('products/pinard', function(){
     return view('products/LayoutProd');
 });
+
+route::get('/connexion', function (){
+    return view('connect/connection');
+});
+
+route::get('/inscription', function (){
+    return view('connect/inscription');
+});
