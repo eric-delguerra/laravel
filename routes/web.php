@@ -29,3 +29,7 @@ Route::get('/basket', function () {
 
 Route::get('/contacts', 'PageController@contacts');
 Route::get('/contacts/{id}', 'PageController@contact');
+
+Route::get('products/pinard', function(){
+    return view('products/LayoutProd');
+});
