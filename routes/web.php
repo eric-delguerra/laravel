@@ -25,7 +25,7 @@ Route::get('/basket', function () {
     return view('orders/basket');
 });
 
-Route::get('/test', 'PostController@index');
+Route::get('/test', 'PostsController@index');
 
 // Contacts
 
