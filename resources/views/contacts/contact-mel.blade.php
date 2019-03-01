@@ -1,8 +1,12 @@
 
-@extends('layout')
+@extends('/contacts/contact-layout')
 
 @section ('MetaTitle','contactMel')
 
-@section('content','Page de Mel')
+@section('cv','Page de Mel')
+
+@section('nom')
+    Mélanie
+@stop
 
 

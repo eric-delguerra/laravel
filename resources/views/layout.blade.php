@@ -24,9 +24,9 @@
             @yield('content')<br>
             @yield('listContact')
         </div>
-        @yield('contact')
+        @yield('contactTitle', '')
     </div>
-    @yield('contactTitle', '')
+    @yield('contact')
     @yield('apropos', '')
  @yield('petitforeach')
 </div>
