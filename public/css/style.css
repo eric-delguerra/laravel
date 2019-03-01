@@ -52,3 +52,20 @@ html, body {
 .presentation {
     text-align: center;
 }
+
+.ProdName {
+    font-size: large;
+    font-weight: bold;
+    margin-left: 150px;
+
+}
+
+.description {
+    margin-left : 600px;
+    margin-bottom: 70px;
+}
+
+.prix {
+    margin-left: 700px;
+    margin-bottom: 70px;
+}
