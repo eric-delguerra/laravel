@@ -1,7 +1,7 @@
 
 @extends('layout')
 
-@section ('title','contactMel')
+@section ('MetaTitle','contactMel')
 
 @section('content','Page de Mel')
 

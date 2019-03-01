@@ -14,18 +14,100 @@ class PageController extends Controller
     public function contact($id)
     {
         if ($id == "eric") {
-            return view('contacts/contact-eric');
+            $board = [
+                [
+                    'name' => 'Eric',
+                    'link' => '/contacts/eric'
+                ],
+                [
+                    'name' => 'Melanie',
+                    'link' => '/contacts/mel'
+                ],
+                [
+                    'name' => 'Christophe',
+                    'link' => '/contacts/christophe'
+                ],
+                [
+                    'name' => 'Cedric',
+                    'link' => '/contacts/cedric'
+                ]
+            ];
+
+            return view('contacts/contact-eric', [
+                'contacts' => $board
+            ]);
         }
       elseif ($id == "christophe") {
-            return view('contacts/contact-christophe');
+          $board = [
+              [
+                  'name' => 'Eric',
+                  'link' => '/contacts/eric'
+              ],
+              [
+                  'name' => 'Melanie',
+                  'link' => '/contacts/mel'
+              ],
+              [
+                  'name' => 'Christophe',
+                  'link' => '/contacts/christophe'
+              ],
+              [
+                  'name' => 'Cedric',
+                  'link' => '/contacts/cedric'
+              ]
+          ];
+            return view('contacts/contact-christophe', [
+                'contacts' => $board
+            ]);
       }
         elseif ($id == "mel") {
-            return view('/contacts/contact-mel');
+            $board = [
+                [
+                    'name' => 'Eric',
+                    'link' => '/contacts/eric'
+                ],
+                [
+                    'name' => 'Melanie',
+                    'link' => '/contacts/mel'
+                ],
+                [
+                    'name' => 'Christophe',
+                    'link' => '/contacts/christophe'
+                ],
+                [
+                    'name' => 'Cedric',
+                    'link' => '/contacts/cedric'
+                ]
+            ];
+            return view('/contacts/contact-mel', [
+                'contacts' => $board
+            ]);
         }
       elseif ($id == "cedric") {
-            return view('/contacts/contact-cedric');
+          $board = [
+              [
+                  'name' => 'Eric',
+                  'link' => '/contacts/eric'
+              ],
+              [
+                  'name' => 'Melanie',
+                  'link' => '/contacts/mel'
+              ],
+              [
+                  'name' => 'Christophe',
+                  'link' => '/contacts/christophe'
+              ],
+              [
+                  'name' => 'Cedric',
+                  'link' => '/contacts/cedric'
+              ]
+          ];
+            return view('/contacts/contact-cedric', [
+                'contacts' => $board
+            ]);
       }
       else {
+
             return view('/welcome');
       }
     }

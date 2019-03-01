@@ -1,5 +1,5 @@
 @extends('layout')
 
-@section('title', "Fiche $x")
+@section('MetaTitle', "Fiche $x")
 
 @section('content', "Fiche produit : $x")

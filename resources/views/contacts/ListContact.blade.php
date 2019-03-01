@@ -5,3 +5,4 @@
         <a href="{{ $contact['link'] }}">{{ $contact['name'] }}</a>
     @endforeach
 @endsection
+

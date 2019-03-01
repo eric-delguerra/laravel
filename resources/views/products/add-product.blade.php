@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Add Product')
+@section('MetaTitle', 'Add Product')
 
 @section('content')
 <form action="/product" method="post">

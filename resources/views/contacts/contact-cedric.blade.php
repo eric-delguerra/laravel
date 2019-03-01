@@ -1,5 +1,14 @@
-@extends('layout')
+{{--@extends('layout')--}}
 
-@section('title', 'Contact')
+@section('MetaTitle', 'Contact')
 
-@section('content', 'A propos de Cédric')
+@section('contactTitle')
+    <div class="title m-b-md">
+    <h1>A Propos de Cédric</h1>
+    </div>
+@endsection
+@extends('/contacts/contact-layout')
+
+{{--@yield('test2', 'Default Content')--}}
+{{--@yield('test')--}}
+
