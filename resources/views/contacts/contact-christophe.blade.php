@@ -1,6 +1,5 @@
-@extends('layout')
-
-@section('contact')
+@extends('/contacts/contact-layout')
+@section('cv')
     <ul>
         <li>Christophe</li>
         <p class="presentation"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -15,3 +14,9 @@
         <li>Mail : Exemple@mail.com</li>
     </ul>
 @endsection
+
+@section('MetaTitle', 'Contact')
+
+@section('nom')
+    Christophe
+@stop
