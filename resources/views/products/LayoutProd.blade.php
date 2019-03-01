@@ -24,9 +24,8 @@
     Home</a>
 </div>
 <p class="ProdName">
-    Pinard<br />
+    Pinard<br/>
     <img src="{{ asset('images/pinard.jpg') }}" alt="photo d'une bouteille de pinard">
-
 </p>
 <div class="description">
     Cupcake ipsum dolor sit amet. Bear claw chupa chups jujubes pudding soufflé liquorice jelly beans carrot cake.<br/>

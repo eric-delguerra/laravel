@@ -32,22 +32,21 @@ class productController extends Controller
             ]
         ];
 
-        return view('products/products', [
-            'products' => $tab
-        ]);
+        return view('products/products')
+            ->withproducts($tab)
+            ;
     }
-
 
     public function create()
     {
-        return view('products/add-product');
+
     }
 
 
     public function store(Request $request)
     {
         //dump($request);
-        return view('products/confirm-save-product');
+        return view('admin.confirm-save-product');
     }
 
 

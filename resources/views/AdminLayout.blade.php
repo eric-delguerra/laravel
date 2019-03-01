@@ -11,27 +11,23 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 </head>
 <body>
-<div class="links">
-    <a href="/">Home</a>
-    <a href="/products">Liste des produits</a>
-    {{--<a href="/product">Produit</a>--}}
-    <a href="/basket">Panier</a>
-    <a href="/contacts">Contact</a>
-    <a href="/admin">Be an admin</a>
-</div>
 <div class="content">
-    <div class="title m-b-md">
-        <div class="links">
-            @yield('content')<br>
-            @yield('listContact')
-        </div>
-        @yield('contactTitle', '')
+<div class="title m-b-md">
+
+
+        @yield('contactTitle', 'Admin')
+
+
     </div>
-    @yield('contact')
-    @yield('apropos', '')
-    @yield('petitforeach')
+    <div class="links">
+    </div>
 </div>
 <div class="links">
+    <a href="/admin">AdminHome</a>
+    <a href="admin/create">Ajouter un produit</a>
+    <a href="admin/contacts">Ajouter un contact</a>
+    <a href="/">Retour à la navigation</a>
 </div>
+@yield('content')
 </body>
 </html>

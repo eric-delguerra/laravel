@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('AdminLayout')
 
-@section('MetaTitle', 'Add Product')
+
 
 @section('content')
 <form action="/product" method="post">
