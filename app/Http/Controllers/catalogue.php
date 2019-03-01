@@ -22,6 +22,25 @@ $tab = [
         'description' => 'Le sang du Christ'
     ]
 ];
- $Products = $tab;
+$Products = $tab;
 
+
+$board = [
+    [
+        'name' => 'Eric',
+        'link' => '/contacts/eric'
+    ],
+    [
+        'name' => 'Melanie',
+        'link' => '/contacts/mel'
+    ],
+    [
+        'name' => 'Christophe',
+        'link' => '/contacts/christophe'
+    ],
+    [
+        'name' => 'Cedric',
+        'link' => '/contacts/cedric'
+    ]
+];
 ?>
