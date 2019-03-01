@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -21,8 +18,6 @@
     <a href="/basket">Panier</a>
     <a href="/contacts">Contact</a>
 </div>
-
-
 <div class="content">
     <div class="title m-b-md">
         <div class="links">
@@ -35,11 +30,5 @@
     @yield('apropos', '')
  @yield('petitforeach')
 </div>
-
-
-
-
-
-
 </body>
 </html>
