@@ -5,7 +5,19 @@
 @section('content', 'Liste des produits')
 
 @section('petitforeach')
-    <div class="row">
+    <div class="row tri">
+        <div>
+            <a href="/products?price" class="btn btn-outline-info">
+                Trier par prix
+            </a>
+        </div>
+        <div>
+            <a href="/products" class="btn btn-outline-info">
+                Trier par nom
+            </a>
+        </div>
+    </div>
+       <div class="row">
         @foreach($products as $prod)
             <div class="col-4">
                 <a href="product/{{ $prod->id }}">

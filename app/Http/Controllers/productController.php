@@ -10,8 +10,15 @@ class productController extends Controller
 
     public function index()
     {
-    $products = Product::all();
-        return view('products.products', ['products' => $products]);
+        if(isset($_GET['price'])){
+            $products = Product::all()->sortBy('price');
+            return view('products.products', ['products' => $products]);
+        }
+        else{
+            $products = Product::all()->sortBy('name');
+            return view('products.products', ['products' => $products]);
+        }
+
 
     }
 
