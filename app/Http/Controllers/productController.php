@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\ServiceProvider;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class productController extends Controller
@@ -9,32 +12,11 @@ class productController extends Controller
 
     public function index()
     {
-        $tab = [
-            [
-                'name' => 'saucisson',
-                'price' => 12,
-                'description' => 'Il est bon'
-            ],
-            [
-                'name' => 'Fromage',
-                'price' => 9,
-                'description' => 'C\'est pas mauvais'
-            ],
-            [
-                'name' => 'pain',
-                'price' => 1,
-                'description' => 'Le corps du Christ'
-            ],
-            [
-                'name' => 'Pinard',
-                'price' => 56,
-                'description' => 'Le sang du Christ'
-            ]
-        ];
+        $products = DB::select('SELECT * FROM products');
 
-        return view('products/products')
-            ->withproducts($tab)
-            ;
+//        dd($products);
+        return view('products.products', ['products' => $products]);
+
     }
 
     public function create()
@@ -52,9 +34,8 @@ class productController extends Controller
 
     public function show($id)
     {
-        return view('products/product', [
-            'x'=> $id
-        ]);
+        $results = DB::select('select * from products where idProduct = :id', ['id' => $id]);
+        return view('products/product', ['product' => $results]);
     }
 
 

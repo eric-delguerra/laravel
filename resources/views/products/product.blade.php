@@ -1,5 +1,9 @@
 @extends('layout')
 
-@section('MetaTitle', "Fiche $x")
+@section('MetaTitle', "")
 
-@section('content', "Fiche produit : $x")
+@section('content')
+    {{ $product->name }}
+
+
+@endsection

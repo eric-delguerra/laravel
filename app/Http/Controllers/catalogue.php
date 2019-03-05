@@ -24,7 +24,7 @@ $tab = [
 ];
 $Products = $tab;
 
-
+global $board;
 $board = [
     [
         'name' => 'Eric',
