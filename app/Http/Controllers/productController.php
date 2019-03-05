@@ -35,7 +35,8 @@ class productController extends Controller
     public function show($id)
     {
         $results = DB::select('select * from products where idProduct = :id', ['id' => $id]);
-        return view('products/product', ['product' => $results]);
+//        dd($results);
+        return view('products/product', ['product' => $results[0]]);
     }
 
 

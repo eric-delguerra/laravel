@@ -33,6 +33,7 @@ html, body {
 
 .title {
     font-size: 84px;
+    margin: auto;
 }
 
 .links > a {
@@ -60,21 +61,23 @@ html, body {
 }
 
 .description {
-    margin-left : 600px;
-    margin-bottom: 70px;
+    margin : auto;
+    font-size: xx-large;
 }
 
 .prix {
-    margin-left: 700px;
-    margin-bottom: 70px;
+    font-size: 35px;
 }
 .contact:hover {
 
 }
-img {
+a img {
     width: 50%;
 }
 
 .Product {
     height : 50px;
+}
+.right{
+    text-align: right;
 }
