@@ -1,10 +1,11 @@
 @extends('layout')
 
-@section('MetaTitle', "Fiche $x")
+@section('MetaTitle', "Fiche $product->nom ")
 
-@section('content', "Fiche produit : $x")
+@section('content', "Fiche produit : $product->nom")
 
-@section('content')
+@section('apropos')
     <br>
-    description:
+{{--    @php(var_dump($product))--}}
+    description: {{$product->description}}
 @stop

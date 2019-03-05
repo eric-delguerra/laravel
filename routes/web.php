@@ -16,9 +16,9 @@ Route::get('/', 'PageController@index');
 
 // Produits
 
-Route::get('/products', 'productController@index');
-Route::resource('product', 'productController');
-Route::resource('product/{id}', 'productController@products');
+Route::get('/products', 'PageController@products');
+Route::get('product/{id}', 'PageController@product');
+Route::resource('product', 'PageController');
 
 // Panier
 
@@ -31,9 +31,9 @@ Route::get('/basket', function () {
 Route::get('/contacts', 'PageController@contacts');
 Route::get('/contacts/{id}', 'PageController@contact');
 
-Route::get('products/pinard', function(){
-    return view('products/LayoutProd');
-});
+//Route::get('products/pinard', function(){
+//    return view('products/LayoutProd');
+//});
 
 Route::get('/connexion', function (){
     return view('connect/connection');

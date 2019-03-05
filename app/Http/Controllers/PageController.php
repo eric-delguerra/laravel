@@ -106,15 +106,19 @@ public $board = [
 
     }
 
-    public function products($id){
-        $search = DB::select('SELECT nom FROM product');
-        foreach ($search as $item){
-            if ($item = $id){
-                $product = DB::select('SELECT * FROM product WHERE nom = \'?\' ',$id);
+    public function products(){
+        $list = DB::select('SELECT * FROM product');
+//        dd($list);
+        return view('products.products', ['products'=>$list]);
+    }
+
+    public function product($id){
+                $product = DB::select('SELECT * FROM product WHERE ID_product = ? ',[$id]);
+//                dd($product);
                 return view('products.product')
-                    ->with(['product'=>$product]);
-            }
-        }
+                    ->with(['product'=>$product[0]]);
+
+
     }
 }
 

@@ -4,8 +4,9 @@
 
 @section('content', 'Liste des produits')
 
-@section('content')
+@section('petitforeach')
+{{--    @php(var_dump($products))--}}
     @foreach($products as $prod)
-        {{ $prod['name'] }}  {{ $prod['description'] }}<br>
+       <a href="/product/{{ $prod->ID_product }}">{{ $prod->nom }}</a><br>
     @endforeach
 @endsection

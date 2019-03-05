@@ -1,8 +1,13 @@
 @extends('layout')
 
 @section('listContact')
+{{--    @php(var_dump($contacts))--}}
     @foreach($contacts as $contact)
-        <a href="{{ $contact['link'] }}">{{ $contact['name'] }}</a>
+        @if ($contact['name'] == 'Eric')
+            <a href="{{ $contact['link'] }}">debut(Eric)</a>
+        @else
+            <a href="{{ $contact['link'] }}">{{ $contact['name'] }}</a>
+        @endif
     @endforeach
 @endsection
 
