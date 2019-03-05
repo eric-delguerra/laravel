@@ -12,12 +12,9 @@
                 {{ $product->name }}
             </div>
             <p class="description">{{ $product->description }}</p>
-
             <div class="row">
-
                 <div class="col prix">
                     {{ $product->price/100 }} €
-
                 </div>
                 <div class="col p-2" >
                     <button type="submit">Acheter</button>

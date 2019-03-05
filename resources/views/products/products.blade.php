@@ -8,7 +8,7 @@
     <div class="row">
         @foreach($products as $prod)
             <div class="col-4">
-                <a href="product/{{ $prod->idProduct }}">
+                <a href="product/{{ $prod->id }}">
                     <img src="{{ asset("images/$prod->img") }}" alt="{{ $prod->name }}"> <br>
                 </a>
                 <div class="row d-flex justify-content-around Product  align-items-center">

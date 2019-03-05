@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\ServiceProvider;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Product;
 
 class productController extends Controller
 {
 
     public function index()
     {
-        $products = DB::select('SELECT * FROM products');
-
-//        dd($products);
+    $products = Product::all();
         return view('products.products', ['products' => $products]);
 
     }
@@ -27,16 +23,14 @@ class productController extends Controller
 
     public function store(Request $request)
     {
-        //dump($request);
         return view('admin.confirm-save-product');
     }
 
 
     public function show($id)
     {
-        $results = DB::select('select * from products where idProduct = :id', ['id' => $id]);
-//        dd($results);
-        return view('products/product', ['product' => $results[0]]);
+        $results = Product::find($id);
+        return view('products/product', ['product' => $results]);
     }
 
 
