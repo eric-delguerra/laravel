@@ -4,7 +4,7 @@
 
 @section('content', 'Liste des produits')
 
-@section('petitforeach')
+@section('content')
     @foreach($products as $prod)
         {{ $prod['name'] }}  {{ $prod['description'] }}<br>
     @endforeach

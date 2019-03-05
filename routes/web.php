@@ -18,6 +18,7 @@ Route::get('/', 'PageController@index');
 
 Route::get('/products', 'productController@index');
 Route::resource('product', 'productController');
+Route::resource('product/{id}', 'productController@products');
 
 // Panier
 
@@ -34,10 +35,10 @@ Route::get('products/pinard', function(){
     return view('products/LayoutProd');
 });
 
-route::get('/connexion', function (){
+Route::get('/connexion', function (){
     return view('connect/connection');
 });
 
-route::get('/inscription', function (){
+Route::get('/inscription', function (){
     return view('connect/inscription');
 });

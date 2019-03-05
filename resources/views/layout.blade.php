@@ -17,7 +17,7 @@
     <a href="/product">Produit</a>
     <a href="/basket">Panier</a>
     <a href="/contacts">Contact</a>
-    <a href="/connexion">Cgit onnexion</a>
+    <a href="/connexion">Connexion</a>
 </div>
 <div class="content">
     <div class="title m-b-md">

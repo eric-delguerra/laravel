@@ -5,6 +5,10 @@
 
 @section('inscript')
     <div>
+        <label for="mail">Email: </label>
+        <input type="email" name="mail" id="email">
+    </div>
+    <div>
         <label for="firstname">Prenom: </label>
         <input type="text" name="firstname" id="prenom">
     </div>

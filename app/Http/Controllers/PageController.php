@@ -3,141 +3,118 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+
+public $board = [
+    'eric' => [
+                'name' => 'Éric',
+                'link' => '/contacts/eric',
+                'bio' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed tellus sapien, imperdiet eu aliquam eget, eleifend et ex.
+                            Mauris vel scelerisque felis. Etiam odio est, varius eget tincidunt et,
+                            imperdiet ac urna. Maecenas non arcu quis arcu congue ultrices. Vestibulum
+                            dui orci, egestas id est id, ullamcorper porta arcu. Morbi ornare massa vel
+                            tortor dignissim sodales. Cras ac orci elementum quam rutrum varius in ac
+                            quam. Ut augue eros, blandit sit amet ullamcorper sed, imperdiet sit amet
+                            ex. Cras non eleifend magna, vel placerat quam. ',
+                'tel' => '0505050505',
+                'mail' => 'Exemple@mail.com'
+            ],
+    'melanie' => [
+                    'name' => 'Melanie',
+                    'link' => '/contacts/mel',
+                    'bio' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed tellus sapien, imperdiet eu aliquam eget, eleifend et ex.
+                            Mauris vel scelerisque felis. Etiam odio est, varius eget tincidunt et,
+                            imperdiet ac urna. Maecenas non arcu quis arcu congue ultrices. Vestibulum
+                            dui orci, egestas id est id, ullamcorper porta arcu. Morbi ornare massa vel
+                            tortor dignissim sodales. Cras ac orci elementum quam rutrum varius in ac
+                            quam. Ut augue eros, blandit sit amet ullamcorper sed, imperdiet sit amet
+                            ex. Cras non eleifend magna, vel placerat quam. ',
+                    'tel' => '0505050505',
+                    'mail' => 'Exemple@mail.com'
+                 ],
+    'christophe' => [
+                    'name' => 'Christophe',
+                    'link' => '/contacts/christophe',
+                    'bio' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed tellus sapien, imperdiet eu aliquam eget, eleifend et ex.
+                            Mauris vel scelerisque felis. Etiam odio est, varius eget tincidunt et,
+                            imperdiet ac urna. Maecenas non arcu quis arcu congue ultrices. Vestibulum
+                            dui orci, egestas id est id, ullamcorper porta arcu. Morbi ornare massa vel
+                            tortor dignissim sodales. Cras ac orci elementum quam rutrum varius in ac
+                            quam. Ut augue eros, blandit sit amet ullamcorper sed, imperdiet sit amet
+                            ex. Cras non eleifend magna, vel placerat quam. ',
+                    'tel' => '0505050505',
+                    'mail' => 'Exemple@mail.com'
+                    ],
+    'cedric' => [
+                'name' => 'Cedric',
+                'link' => '/contacts/cedric',
+                'bio' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed tellus sapien, imperdiet eu aliquam eget, eleifend et ex.
+                            Mauris vel scelerisque felis. Etiam odio est, varius eget tincidunt et,
+                            imperdiet ac urna. Maecenas non arcu quis arcu congue ultrices. Vestibulum
+                            dui orci, egestas id est id, ullamcorper porta arcu. Morbi ornare massa vel
+                            tortor dignissim sodales. Cras ac orci elementum quam rutrum varius in ac
+                            quam. Ut augue eros, blandit sit amet ullamcorper sed, imperdiet sit amet
+                            ex. Cras non eleifend magna, vel placerat quam. ',
+                'tel' => '0505050505',
+                'mail' => 'Exemple@mail.com'
+                ]
+];
+
     public function index()
     {
-        return view('/welcome');
+        return view('welcome');
     }
 
     public function contact($id)
     {
-        if ($id == "eric") {
-            $board = [
-                [
-                    'name' => 'Eric',
-                    'link' => '/contacts/eric'
-                ],
-                [
-                    'name' => 'Melanie',
-                    'link' => '/contacts/mel'
-                ],
-                [
-                    'name' => 'Christophe',
-                    'link' => '/contacts/christophe'
-                ],
-                [
-                    'name' => 'Cedric',
-                    'link' => '/contacts/cedric'
-                ]
-            ];
 
-            return view('contacts/contact-eric', [
-                'contacts' => $board
-            ]);
+        if ($id == "eric") {
+            return view('contacts/contact-fiche')
+                ->with(['contacts'=>$this->board['eric']]);
         }
       elseif ($id == "christophe") {
-          $board = [
-              [
-                  'name' => 'Eric',
-                  'link' => '/contacts/eric'
-              ],
-              [
-                  'name' => 'Melanie',
-                  'link' => '/contacts/mel'
-              ],
-              [
-                  'name' => 'Christophe',
-                  'link' => '/contacts/christophe'
-              ],
-              [
-                  'name' => 'Cedric',
-                  'link' => '/contacts/cedric'
-              ]
-          ];
-            return view('contacts/contact-christophe', [
-                'contacts' => $board
-            ]);
+            return view('contacts/contact-fiche')
+                    ->with(['contacts' => $this->board['christophe']]);
       }
         elseif ($id == "mel") {
-            $board = [
-                [
-                    'name' => 'Eric',
-                    'link' => '/contacts/eric'
-                ],
-                [
-                    'name' => 'Melanie',
-                    'link' => '/contacts/mel'
-                ],
-                [
-                    'name' => 'Christophe',
-                    'link' => '/contacts/christophe'
-                ],
-                [
-                    'name' => 'Cedric',
-                    'link' => '/contacts/cedric'
-                ]
-            ];
-            return view('/contacts/contact-mel', [
-                'contacts' => $board
-            ]);
+            return view('contacts/contact-fiche')
+                ->with(['contacts' => $this->board['melanie']]);
         }
       elseif ($id == "cedric") {
-          $board = [
-              [
-                  'name' => 'Eric',
-                  'link' => '/contacts/eric'
-              ],
-              [
-                  'name' => 'Melanie',
-                  'link' => '/contacts/mel'
-              ],
-              [
-                  'name' => 'Christophe',
-                  'link' => '/contacts/christophe'
-              ],
-              [
-                  'name' => 'Cedric',
-                  'link' => '/contacts/cedric'
-              ]
-          ];
-            return view('/contacts/contact-cedric', [
-                'contacts' => $board
-            ]);
+          return view('contacts/contact-fiche')
+              ->with(['contacts' => $this->board['cedric']]);
       }
       else {
 
-            return view('/welcome');
+            return view('contacts/ListContact');
       }
     }
     public function contacts()
     {
-        $board = [
-            [
-                'name' => 'Eric',
-                'link' => '/contacts/eric'
-            ],
-            [
-                'name' => 'Melanie',
-                'link' => '/contacts/mel'
-            ],
-            [
-                'name' => 'Christophe',
-                'link' => '/contacts/christophe'
-            ],
-            [
-                'name' => 'Cedric',
-                'link' => '/contacts/cedric'
-            ]
-        ];
-        return view('contacts.ListContact', [
-            'contacts' => $board
-        ]);
+        return view('contacts.ListContact')
+                ->with(['contacts'=>$this->board]);
     }
 
     public function connect(){
 
+    }
+
+    public function products($id){
+        $search = DB::select('SELECT nom FROM product');
+        foreach ($search as $item){
+            if ($item = $id){
+                $product = DB::select('SELECT * FROM product WHERE nom = \'?\' ',$id);
+                return view('products.product')
+                    ->with(['product'=>$product]);
+            }
+        }
     }
 }
 

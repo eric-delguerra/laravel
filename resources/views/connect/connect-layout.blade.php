@@ -1,14 +1,14 @@
 @extends('layout')
 
 @section('connect')
-    <form action="" method="get" class="connect">
+    <form action="" method="post" class="connect">
         <div>
-            <label for="user">User: </label>
+            <label for="user">Utilisateur: </label>
             <input type="text" name="user" id="user">
         </div>
         <div>
-            <label for="mail">Email: </label>
-            <input type="email" name="mail" id="email">
+            <label for="password">Mot de Passe: </label>
+            <input type="password" name="password" id="password">
         </div>
         @yield('inscript')
         <div>
