@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Product;
 require 'catalogue.php';
 
 class PageController extends Controller
@@ -39,13 +40,15 @@ class PageController extends Controller
 
     public function admin(){
         $admin = true;
-        return view('admin.welcome');
+        $Products = Product::all()->toArray();
+        return view('admin.welcome', compact('Products'));
     }
-    public function adminP($id) {
+
+    public function adminCreate($id) {
         if ($id == 'create'){
             return view('admin.add-product');
         }
 //        if ($id == 'contact')
-    }
+   }
 }
 
