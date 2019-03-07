@@ -18,6 +18,7 @@
     <a href="/basket">Panier</a>
     <a href="/contacts">Contact</a>
     <a href="/connexion">Connexion</a>
+    <a href="/products/edit">Admin</a>
 </div>
 <div class="content">
     <div class="title m-b-md">

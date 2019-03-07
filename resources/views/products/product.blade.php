@@ -1,8 +1,8 @@
 @extends('layout')
 
-@section('MetaTitle', "Fiche $product->nom ")
+@section('MetaTitle', "Fiche $product->name ")
 
-@section('content', "Fiche produit : $product->nom")
+@section('content', "Fiche produit : $product->name")
 
 @section('apropos')
     <br>

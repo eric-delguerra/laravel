@@ -1,12 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Http\Request;
+use App\Product;
 class PageController extends Controller
 {
+
+
 
 public $board = [
     'eric' => [
@@ -72,6 +73,8 @@ public $board = [
         return view('welcome');
     }
 
+
+
     public function contact($id)
     {
 
@@ -107,17 +110,80 @@ public $board = [
     }
 
     public function products(){
-        $list = DB::select('SELECT * FROM product');
-//        dd($list);
-        return view('products.products', ['products'=>$list]);
+        $products = Product::all();
+        return view('products.products')
+            ->with(['products'=>$products]);
+    }
+
+    public function prodName(){
+        $products = Product::orderBy("name")->get();
+        return view('products.products')
+            ->with(['products'=>$products]);
+    }
+
+    public function prodPice(){
+        $products = Product::orderBy("price")->get();
+        return view('products.products')
+            ->with(['products'=>$products]);
     }
 
     public function product($id){
-                $product = DB::select('SELECT * FROM product WHERE ID_product = ? ',[$id]);
+                $product = Product::where('id', $id)->get();
 //                dd($product);
                 return view('products.product')
                     ->with(['product'=>$product[0]]);
+    }
 
+    public function productAdd(Request $request){
+
+        $product = new Product();
+        $data =[
+                'name' => $request->input('name'),
+                'description' => $request->input('description'),
+                'price' => $request->input('price'),
+                'weigth' => $request->input('weigth'),
+                'stock' => $request->input('stock'),
+                'ID_category' => $request->input('Category')
+        ];
+        $product->fill($data);
+
+        $product->save();
+
+        return view('admin.addProduct');
+    }
+
+    public function productsEdit(Request $request){
+        $products = Product::all();
+        return view('admin.editProducts')
+            ->with(['products'=>$products]);
+
+
+    }
+
+    public function productEdit($id){
+        $product = Product::where('id', $id)->get();
+        return view('admin.editProduct')
+            ->with(['product'=>$product[0]]);
+
+    }
+
+    public function productUpdate($id, Request $request){
+
+        $product = Product::find($id);
+//        dump($product);
+        $data =[
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'weigth' => $request->input('weigth'),
+            'stock' => $request->input('stock'),
+            'ID_category' => $request->input('Category')
+        ];
+        $product->fill($data);
+        $product->save();
+        $products = Product::all();
+        return redirect('/products/edit/')
+            ->with(['product'=>$products]);
 
     }
 }

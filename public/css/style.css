@@ -76,3 +76,22 @@ html, body {
     flex-direction: column;
     align-items: center;
 }
+
+.produit{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produit table {
+    border: 3px solid black;
+
+}
+
+.produit th , td {
+    border: 1px solid black;
+
+}
+
+

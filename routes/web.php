@@ -20,6 +20,17 @@ Route::get('/products', 'PageController@products');
 Route::get('product/{id}', 'PageController@product');
 Route::resource('product', 'PageController');
 
+Route::get('/products/name', 'PageController@prodName');
+Route::get('/products/price', 'PageController@prodPice');
+
+Route::get('/products/edit', 'PageController@productsEdit');
+Route::get('/product/edit/{id}', 'PageController@productEdit');
+Route::post('/product/edit/{id}', 'PageController@productUpdate');
+Route::post('/addprod', 'PageController@productAdd');
+Route::get('/addprod', function(){
+    return view('admin/addProduct');
+});
+
 // Panier
 
 Route::get('/basket', function () {
