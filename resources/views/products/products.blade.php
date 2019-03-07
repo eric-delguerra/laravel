@@ -16,19 +16,31 @@
                 Trier par nom
             </a>
         </div>
+        <div>
+            <a href="/products?stock" class="btn btn-outline-info">
+                Trier par quantité
+            </a>
+        </div>
     </div>
        <div class="row">
         @foreach($products as $prod)
-            <div class="col-4">
+            <div class="col-4 border border-dark rounded">
                 <a href="product/{{ $prod->id }}">
                     <img src="{{ asset("images/$prod->img") }}" alt="{{ $prod->name }}"> <br>
                 </a>
-                <div class="row d-flex justify-content-around Product  align-items-center">
+                <div class="row d-flex justify-content-around Product  align-items-center border border-dark ">
                     <div>
                         {{ $prod->name }}
                     </div>
                     <div>
                         {{ $prod->price/100 }} € <br>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        @if($prod->stock > 0 )
+                            <p style="color: #2d995b">Disponible</p>
+                        @else
+                            <p style="color: red">Rupture de stock</p>
+                        @endif
                     </div>
                 </div>
             </div>

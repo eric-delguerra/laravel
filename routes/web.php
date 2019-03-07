@@ -18,9 +18,6 @@ Route::get('/', 'PageController@index');
 
 Route::get('/products', 'productController@index');
 Route::resource('/product', 'productController');
-Route::get('products/pinard', function(){
-    return view('products/LayoutProd');
-});
 
 // Panier
 
@@ -37,7 +34,7 @@ Route::get('/contacts/{id}', 'PageController@contact');
 // Admin
 
 Route::get('/admin', 'PageController@admin');
-Route::get('/admin/{id}', 'PageController@adminCreate');
+Route::get('/admin/{id}', 'productController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

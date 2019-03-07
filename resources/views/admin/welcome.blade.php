@@ -1,8 +1,6 @@
 @extends('AdminLayout')
-
 @section('MetaTitle', 'Homepage Admin')
 @section('content')
-
 <div class="container">
     <br />
     <table class="table table-striped">
@@ -35,4 +33,4 @@
         </tbody>
     </table>
 </div>
-    @endsection
+@endsection

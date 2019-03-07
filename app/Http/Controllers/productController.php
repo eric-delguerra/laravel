@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Categories;
 
 class productController extends Controller
 {
 
     public function index()
     {
-        if(isset($_GET['price'])){
+        if (isset($_GET['price'])) {
             $products = Product::all()->sortBy('price');
             return view('products.products', ['products' => $products]);
         }
-        else{
+        if (isset($_GET['stock'])) {
+            $products = Product::all()->sortBy('stock');
+            return view('products.products', ['products' => $products]);
+        } else {
             $products = Product::all()->sortBy('name');
             return view('products.products', ['products' => $products]);
         }
@@ -22,7 +27,8 @@ class productController extends Controller
 
     public function create()
     {
-        return view('admin.add-product');
+        $idCategorie = Categories::all()->toArray();
+        return view('admin.add-product', ['idCategorie' => $idCategorie]);
     }
 
     public function store(Request $request)
@@ -34,12 +40,12 @@ class productController extends Controller
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
             'weigth' => 'required|numeric',
-            'idCategory' => 'required|numeric',
+            'category_id' => 'required|numeric',
         ]);
-
         Product::create($product);
-        return view('admin.confirm-save-product');
-//        return view('admin.confirm-save-product');
+        return redirect('admin')
+            ->with('flash_message', ' Niquel, c\'est bien ajouté ')
+            ->with('flash_type', 'alert-success');
     }
 
 
@@ -53,7 +59,7 @@ class productController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('admin.edit',compact('product','id'));
+        return view('admin.edit', compact('product', 'id'));
     }
 
 
@@ -67,7 +73,9 @@ class productController extends Controller
         $product->weigth = $request->get('weigth');
         $product->description = $request->get('description');
         $product->save();
-        return redirect('admin');
+        return redirect('admin')
+            ->with('flash_message', ' Produit mis à jour ')
+            ->with('flash_type', 'alert-warning');
     }
 
 
@@ -75,6 +83,9 @@ class productController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect('admin')->with('success','Product has been  deleted');
+        return redirect('admin')
+            ->with('flash_message', 'Produit supprimé')
+            ->with('flash_type', 'alert-danger');
+
     }
 }
