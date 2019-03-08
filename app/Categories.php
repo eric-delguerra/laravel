@@ -8,6 +8,6 @@ class Categories extends Model
 {
     public function Product()
     {
-        return $this->hasOne('App\Product');
+        return $this->hasMany('App\Product');
     }
 }
