@@ -30,6 +30,7 @@ Route::post('/addprod', 'PageController@productAdd');
 Route::get('/addprod', function(){
     return view('admin/addProduct');
 });
+Route::get('/product/erase/{id}', 'PageController@productErase');
 
 // Panier
 

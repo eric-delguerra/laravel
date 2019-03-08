@@ -19,7 +19,7 @@
                         <a href="/product/{{ $prod->id }}">{{ $prod->name }}</a><br>
                 </td>
                     <td>
-                        <a href="/product/edit/{{ $prod->id }}">Editer</a><br> Supprimer
+                        <a href="/product/edit/{{ $prod->id }}">Editer</a><br> <a href="/product/erase/{{ $prod->id }}">Supprimer</a>
                     </td>
                 </tr>
             @endforeach

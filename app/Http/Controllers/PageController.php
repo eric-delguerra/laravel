@@ -186,5 +186,11 @@ public $board = [
             ->with(['product'=>$products]);
 
     }
+
+    function productErase($id) {
+        $product = \App\Product::find($id);
+        $product->delete();
+        return redirect('/products/edit/');
+    }
 }
 
