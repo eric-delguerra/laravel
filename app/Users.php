@@ -10,4 +10,7 @@ class Users extends Model
     {
         return $this->hasOne('App\Address');
     }
+    public function Orders() {
+        return $this->hasMany(Orders::class);
+    }
 }

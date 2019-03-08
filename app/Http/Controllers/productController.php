@@ -40,7 +40,7 @@ class productController extends Controller
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
             'weigth' => 'required|numeric',
-            'category_id' => 'required|numeric',
+            'categories_id' => 'required|numeric',
         ]);
         Product::create($product);
         return redirect('admin')
