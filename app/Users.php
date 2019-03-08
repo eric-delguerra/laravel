@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
-    public function adress()
+    public function address()
     {
-        return $this->hasOne('App\Adress');
+        return $this->hasOne('App\Address');
     }
 }
