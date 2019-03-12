@@ -6,11 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-//    protected $table = '';
+    protected $table = 'product';
     protected $fillable = ['name',
         'description',
         'price',
         'weigth',
         'stock',
         'ID_category'];
+
+
+    public function promo(){
+        return $this->belongsTo('App\Promo');
+    }
 }

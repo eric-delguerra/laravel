@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Promo;
 class PageController extends Controller
 {
 
@@ -110,7 +111,8 @@ public $board = [
     }
 
     public function products(){
-        $products = Product::all();
+        $products = DB::select('SELECT * FROM product');
+//        $products = Product::all();
         return view('products.products')
             ->with(['products'=>$products]);
     }
@@ -129,9 +131,12 @@ public $board = [
 
     public function product($id){
                 $product = Product::where('id', $id)->get();
-//                dd($product);
-                return view('products.product')
-                    ->with(['product'=>$product[0]]);
+//        dd(Product::find($id)->promo);
+        $promo = Product::find($id)->promo;
+
+        return view('products.product')
+                    ->with(['product'=>$product[0]])
+                    ->with(['promo'=>$promo]);
     }
 
     public function productAdd(Request $request){
@@ -149,7 +154,7 @@ public $board = [
 
         $product->save();
 
-        return view('admin.addProduct');
+        return redirect('/products/edit/');
     }
 
     public function productsEdit(Request $request){
@@ -182,15 +187,16 @@ public $board = [
         $product->fill($data);
         $product->save();
         $products = Product::all();
-        return redirect('/products/edit/')
+        return redirect("/product/edit/$id")
             ->with(['product'=>$products]);
 
     }
 
     function productErase($id) {
-        $product = \App\Product::find($id);
+        $product = Product::find($id);
         $product->delete();
-        return redirect('/products/edit/');
+        return redirect('/products/edit/')
+            ->with('jsAlert', 'Produit Supprimer');
     }
 }
 

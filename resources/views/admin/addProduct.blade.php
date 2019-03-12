@@ -54,6 +54,12 @@
                 </tr>
                 <tr>
                     <td>
+                        <label for="slug">Slug</label>
+                        <input type="number" class="form-control" name="slug" placeholder="Slug">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <label for="Category">Categorie</label>
                         <select class="form-control" name="Category">
                             <option value="1">Animaux (1)</option>

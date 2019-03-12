@@ -5,6 +5,14 @@
 @section('content', 'Edition des Produits')
 
 @section('petitforeach')
+        <script>
+            var msg = '{{Session::get('alert')}}';
+            var exist = '{{Session::has('alert')}}';
+            if (exist){
+                alert(msg);
+            }
+        </script>
+
     <div class="produit">
         <table>
         <thead>
