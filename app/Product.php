@@ -13,4 +13,9 @@ class Product extends Model
         'weigth',
         'stock',
         'ID_category'];
+
+
+    public function promo(){
+        return $this->belongsTo('App\Promo');
+    }
 }

@@ -18,7 +18,7 @@ Route::get('/', 'PageController@index');
 
 Route::get('/products', 'PageController@products');
 Route::get('product/{id}', 'PageController@product');
-Route::resource('product', 'PageController');
+//Route::resource('product', 'PageController');
 
 Route::get('/products/name', 'PageController@prodName');
 Route::get('/products/price', 'PageController@prodPice');
