@@ -13,6 +13,7 @@ class Promo extends Model
         'end_date'
     ];
 
+    public $timestamps = false;
 
     public function product(){
         return $this->hasMany('App\product');

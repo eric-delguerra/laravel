@@ -14,6 +14,7 @@ class Product extends Model
         'stock',
         'ID_category'];
 
+    public $timestamps = false;
 
     public function promo(){
         return $this->belongsTo('App\Promo');
