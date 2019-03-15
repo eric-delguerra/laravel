@@ -10,7 +10,9 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('/welcome');
+        $Products = Product::all();
+        return view('welcome', ['Products' => $Products]);
+
     }
     public function contact($id)
     {

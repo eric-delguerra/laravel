@@ -33,6 +33,7 @@ class productController extends Controller
 
     public function store(Request $request)
     {
+//        dd($request);
         $product = $this->validate(request(), [
             'name' => 'required',
             'description' => 'required',
@@ -42,7 +43,9 @@ class productController extends Controller
             'weigth' => 'required|numeric',
             'categories_id' => 'required|numeric',
         ]);
+
         Product::create($product);
+
         return redirect('admin')
             ->with('flash_message', ' Niquel, c\'est bien ajouté ')
             ->with('flash_type', 'alert-success');
