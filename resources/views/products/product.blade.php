@@ -21,7 +21,7 @@
             </td>
             @if ($product->promo_id == !null)
                 <td>
-                    promo: Réduction de {{$promo->Valeur}}
+                    promo: Réduction de {{$promo->value}}
                     @switch($promo->id)
                         @case(1)
                             %
