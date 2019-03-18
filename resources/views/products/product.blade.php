@@ -5,6 +5,8 @@
 @section('content', "Fiche produit : $product->name")
 
 @section('apropos')
+    {{--@dump($product)--}}
+    {{--@dump($promo)--}}
     <br>
     <table>
         <tr>
@@ -17,9 +19,18 @@
             <td>
                 Poids: {{$product->weigth}}
             </td>
-            @if ($promo->Type==!null)
+            @if ($product->promo_id == !null)
                 <td>
-                    Category: {{$promo->Type}}
+                    promo: Réduction de {{$promo->Valeur}}
+                    @switch($promo->id)
+                        @case(1)
+                            %
+                        @break
+                        @case(2)
+                        €
+                        @break
+                    @endswitch
+
                 </td>
             @endif
         </tr>
