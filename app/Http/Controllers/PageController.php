@@ -135,5 +135,19 @@ class PageController extends Controller
             'contacts' => $board
         ]);
     }
+    public function admin(){
+        $admin = true;
+        return view('admin.welcome');
+    }
+    public function adminCreate($id) {
+        if ($id == 'create'){
+            return view('admin.create');
+        }
+//        if ($id == 'contact')
+    }
+    public function create()
+    {
+     return view('admin.create');
+    }
 }
 

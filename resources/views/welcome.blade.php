@@ -3,3 +3,5 @@
 @section('MetaTitle', 'Homepage')
 
 @section('content', 'Boutique')
+
+

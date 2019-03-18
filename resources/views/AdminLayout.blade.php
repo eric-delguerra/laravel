@@ -55,11 +55,11 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Navigation</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/">Home</a>
-                    <a class="dropdown-item" href="/products">Catalogue</a>
-                    <a class="dropdown-item" href="/basket">Panier</a>
-                    <a class="dropdown-item" href="/a-propos">A propos</a>
-                    <a class="dropdown-item" href="/contacts">Contact</a>
+                    <a class="dropdown-item" href="/admin">AdminHome</a>
+                    <a class="dropdown-item" href="/admin/liste">Liste des produits</a>
+                    <a class="dropdown-item" href="/admin/create">Ajouter un produit</a>
+                    <a class="dropdown-item" href="/admin/supres">Supprimer un produit</a>
+                    <a class="dropdown-item" href="/admin/valide">Valider/invalider</a>
                 </div>
             </li>
         </ul>
@@ -70,66 +70,26 @@
     </div>
 </nav>
 
-<!-- <main role="main" class="container"> -->
-<main role="main" >
-
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Notre Boutique Illot</h1>
-            <p class="lead text-muted">Bienvenue sur notre super site Boutique en ligne.<br> Nous esperons vous procurer une experience agéable.</p>
-            <p>
-                <a href="#" class="btn btn-primary my-2">Parcourir le catalogue</a>
-                <a href="#" class="btn btn-secondary my-2">Créer un compte</a>
-            </p>
-
-            <p>
-                <h2>@yield('content')</h2>
-            </p>
-        </div>
-    </section>
-</main>
-
 <main role="main" class="container">
-    <div class="content">
+
+    <div class="starter-template">
+        <h1>@yield('content')</h1><br>
+    </div>
+
+
+
         <div class="title m-b-md">
             <div class="links">
-                <center>@yield('content')</center><br>
-                <center>@yield('listContact')</center>
+
             </div>
-            @yield('contactTitle', '')
         </div>
-    </div>
 
     <div class="row">
-        <div class="col-md-2">        
-            <center>Incitation achat 01</center><br>
-            <center>Soyez dans le coups et pas dans la gorge avec LoremIpsum...</center><br>
+        <div class="col-sm-8">
+            @yield('corps', 'Default Content')
         </div>
-        <!--<div class="col-sm-8">-->
-        <div class="col-md-8">
-            <center>@yield('contact')</center>
-            <center>@yield('a_propos', '')</center>
-            <center>@yield('show_products')</center>
-            <center>@yield('one_product')</center>
-        </div>
-        <div class="col-md-2">
-            <center>Incitation achat 02</center><br>
-            <center>Le dernier super sac à la mode...</center><br>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-2">        
-            <center>Incitation achat 03</center><br>
-            <center>Essayez LoremIpsum...</center><br>
-        </div>
-        <!--<div class="col-sm-8">-->
-        <div class="col-md-8">
-            <center>@yield('sidebar')</center>
-        </div>
-        <div class="col-md-2">
-            <center>Incitation achat 04</center><br>
-            <center>Ce product est fait pour vous !</center><br>
+        <div class="col-sm-4">
+            @yield('sidebar')
         </div>
     </div>
 

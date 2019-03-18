@@ -70,7 +70,6 @@
     </div>
 </nav>
 
-<!-- <main role="main" class="container"> -->
 <main role="main" >
 
     <section class="jumbotron text-center">
@@ -87,54 +86,23 @@
             </p>
         </div>
     </section>
+
 </main>
 
 <main role="main" class="container">
-    <div class="content">
-        <div class="title m-b-md">
-            <div class="links">
-                <center>@yield('content')</center><br>
-                <center>@yield('listContact')</center>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                @yield('show_products')
             </div>
-            @yield('contactTitle', '')
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-2">        
-            <center>Incitation achat 01</center><br>
-            <center>Soyez dans le coups et pas dans la gorge avec LoremIpsum...</center><br>
-        </div>
-        <!--<div class="col-sm-8">-->
-        <div class="col-md-8">
-            <center>@yield('contact')</center>
-            <center>@yield('a_propos', '')</center>
-            <center>@yield('show_products')</center>
-            <center>@yield('one_product')</center>
-        </div>
-        <div class="col-md-2">
-            <center>Incitation achat 02</center><br>
-            <center>Le dernier super sac à la mode...</center><br>
-        </div>
-    </div>
+</main>
 
-    <div class="row">
-        <div class="col-md-2">        
-            <center>Incitation achat 03</center><br>
-            <center>Essayez LoremIpsum...</center><br>
-        </div>
-        <!--<div class="col-sm-8">-->
-        <div class="col-md-8">
-            <center>@yield('sidebar')</center>
-        </div>
-        <div class="col-md-2">
-            <center>Incitation achat 04</center><br>
-            <center>Ce product est fait pour vous !</center><br>
-        </div>
-    </div>
-
-</main><!-- /.container -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+<script>window.jQuery || document.write('<script src="{{asset('/js/jquery-slim.min.js')}}"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
 </body>
 </html>
