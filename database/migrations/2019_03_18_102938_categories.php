@@ -13,7 +13,7 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table){
+        Schema::create('categories', function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
             $table->timestamp('updated_at')->useCurrent();
@@ -22,7 +22,7 @@ class Categories extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations.git
      *
      * @return void
      */
