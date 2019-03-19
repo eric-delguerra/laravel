@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Categories;
+use App\Promo;
 
 class productController extends Controller
 {
@@ -25,15 +26,21 @@ class productController extends Controller
         }
     }
 
+    public function admin(){
+
+    }
+
     public function create()
     {
         $idCategorie = Categories::all()->toArray();
-        return view('admin.add-product', ['idCategorie' => $idCategorie]);
+        $idPromo = Promo::all()->toArray();
+        return view('admin.add-product')
+        ->with(['idCategorie' => $idCategorie])
+            ->with(['idPromo'=>$idPromo]);
     }
 
     public function store(Request $request)
     {
-//        dd($request);
         $product = $this->validate(request(), [
             'name' => 'required',
             'description' => 'required',
@@ -42,6 +49,7 @@ class productController extends Controller
             'stock' => 'required|numeric',
             'weigth' => 'required|numeric',
             'categories_id' => 'required|numeric',
+            'promo_id' => 'required|numeric',
         ]);
 
         Product::create($product);
@@ -62,7 +70,7 @@ class productController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('admin.edit', compact('product', 'id'));
+        return view('admin.edit', compact('product','id'));
     }
 
 

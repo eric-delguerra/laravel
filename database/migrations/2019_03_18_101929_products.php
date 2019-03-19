@@ -22,6 +22,7 @@ class Products extends Migration
             $table->unsignedInteger('weigth');
             $table->unsignedInteger('stock');
             $table->unsignedInteger('categories_id');
+            $table->unsignedInteger('promo_id');
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
         });

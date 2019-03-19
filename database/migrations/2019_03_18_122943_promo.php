@@ -13,12 +13,14 @@ class Promo extends Migration
      */
     public function up()
     {
-        Schema::create('promo', function (Blueprint $table){
+        Schema::create('promos', function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable()->default(null);
             $table->unsignedInteger('value');
             $table->unsignedInteger('type');
+            $table->unsignedInteger('promo_start')->nullable()->default(null);
+            $table->unsignedInteger('promo_end')->nullable()->default(null);
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
         });
