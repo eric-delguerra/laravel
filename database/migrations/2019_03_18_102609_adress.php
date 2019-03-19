@@ -15,7 +15,7 @@ class Adress extends Migration
     {
         Schema::create('address', function (Blueprint $table){
             $table->increments('id');
-            $table->unsignedInteger('users_id');
+            $table->integer('users_id');
             $table->string('street');
             $table->integer('pstCode');
             $table->string('city');
