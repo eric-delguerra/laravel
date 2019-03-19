@@ -18,10 +18,10 @@ class Products extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('img');
-            $table->unsignedInteger('price');
-            $table->unsignedInteger('weigth');
-            $table->unsignedInteger('stock');
-            $table->unsignedInteger('categories_id');
+            $table->integer('price');
+            $table->integer('weigth');
+            $table->integer('stock');
+            $table->integer('categories_id');
             $table->unsignedInteger('promo_id');
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
