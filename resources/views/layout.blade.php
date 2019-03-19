@@ -33,13 +33,16 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/contacts/Eric">Eric</a>
-                        <a class="dropdown-item" href="/contacts/Mel">Mél</a>
+                        <a class="dropdown-item" href="/contacts/Mel">Melanight</a>
                         <a class="dropdown-item" href="/contacts/Christophe">Christophe</a>
                         <a class="dropdown-item" href="/contacts/Cedric">Cedric</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin">Become an admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart">Panier</a>
                 </li>
             </ul>
         </div>

@@ -21,11 +21,13 @@ Route::resource('/product', 'productController');
 
 // Panier
 
-Route::get('/basket', function () {
-    return view('orders/basket');
+Route::get('cart', function(){
+    return view ('Cart.cart');
 });
 
-// Contacts
+Route::get('add-to-cart/{id}', 'CartController@addToCart');
+
+    // Contacts
 
 //Route::get('/contacts', 'PageController@contacts');
 Route::get('/contacts/{id}', 'PageController@contact');
@@ -43,3 +45,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/auth', function(){
     return view('auth.login');
 });
+
+
+

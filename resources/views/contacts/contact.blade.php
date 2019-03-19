@@ -13,7 +13,7 @@
         </div>
         <div class="biographie">
             <h3>{{ $id }}</h3><br>
-            <p>toto</p>
+            <p>Quelle belle personne!</p>
         </div>
     </div>
 @stop
