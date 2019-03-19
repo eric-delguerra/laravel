@@ -33,7 +33,7 @@ Route::get('contacts/{id}', 'PageController@contact')->name('contacts');
 
 // Admin
 
-Route::get('/admin', 'PageController@admin');
+Route::get('/admin', 'PageController@admin')->name('admin');
 Route::get('/admin/{id}', 'productController@create');
 Auth::routes();
 
