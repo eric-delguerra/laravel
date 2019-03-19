@@ -28,8 +28,8 @@ Route::get('/basket', function () {
 // Contacts
 
 //Route::get('/contacts', 'PageController@contacts');
-Route::get('/contacts/{id}', 'PageController@contact');
-
+//Route::get('/contacts/{id}', 'PageController@contact');
+Route::get('contacts/{id}', 'PageController@contact')->name('contacts');
 
 // Admin
 
