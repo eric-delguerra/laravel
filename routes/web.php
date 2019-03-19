@@ -19,6 +19,10 @@ Route::get('/', 'PageController@index');
 Route::get('/products', 'productController@index');
 Route::resource('/product', 'productController');
 
+//Promo
+//Route::resource('/admin/promo', );
+//Route::resource('/promo', 'productController');
+
 // Panier
 
 Route::get('/basket', function () {
