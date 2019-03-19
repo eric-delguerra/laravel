@@ -12,4 +12,7 @@ class Orders extends Model
     public function Users() {
         return $this->hasOne(Users::class);
     }
+    public function product() {
+        return $this->belongsToMany('App\Product','orders_product', 'order_id','product_id');
+    }
 }
