@@ -10,6 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::group(['prefix'=>'admin'],function (){
+    Route::get('/', 'PageController@admin');
+    Route::post('/', 'productController@store');
+    Route::get('/{id}', 'productController@create');
+    Route::resource('/product', 'productController') ;
+
+});
+
 // Acceuil
 
 Route::get('/', 'PageController@index');
@@ -17,7 +26,6 @@ Route::get('/', 'PageController@index');
 // Produits
 
 Route::get('/products', 'productController@index');
-Route::resource('/product', 'productController');
 
 //Promo
 //Route::resource('/admin/promo', );
@@ -39,8 +47,7 @@ Route::get('/contacts/{id}', 'PageController@contact');
 
 // Admin
 
-Route::get('/admin', 'PageController@admin');
-Route::get('/admin/{id}', 'productController@create');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -54,7 +54,7 @@ class productController extends Controller
 
         Product::create($product);
 
-        return redirect('admin')
+        return redirect('/admin')
             ->with('flash_message', ' Niquel, c\'est bien ajouté ')
             ->with('flash_type', 'alert-success');
     }

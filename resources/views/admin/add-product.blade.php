@@ -16,7 +16,7 @@
     @endif
     <h2 class="presentation">Ajouter un produit</h2>
     <div class="presentation">
-        <form action="/product" method="post">
+        <form action="/admin" method="post">
             @csrf
             <ul> <input type="text" name="name" required><label> - Nouveau nom</label></ul>
             <ul><input type="text" name="description"required><label> - Description</label></ul>
