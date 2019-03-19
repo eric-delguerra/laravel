@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class OrderProduct extends Migration
+class Promo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class OrderProduct extends Migration
      */
     public function up()
     {
-        Schema::create('orders_product', function (Blueprint $table){
+        Schema::create('promos', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('product_id');
-            $table->integer('order_id');
-            $table->integer('quantity');
+            $table->string('name');
+            $table->string('description')->nullable()->default(null);
+            $table->unsignedInteger('value');
+            $table->unsignedInteger('type');
+            $table->unsignedInteger('promo_start')->nullable()->default(null);
+            $table->unsignedInteger('promo_end')->nullable()->default(null);
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
         });

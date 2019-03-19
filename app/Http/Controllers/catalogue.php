@@ -28,7 +28,8 @@ global $board;
 $board = [
     [
         'name' => 'Eric',
-        'link' => '/contacts/eric'
+        'link' => '/contacts/eric',
+        'image'
     ],
     [
         'name' => 'Melanie',

@@ -22,7 +22,7 @@ class Categories extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations.git
      *
      * @return void
      */
