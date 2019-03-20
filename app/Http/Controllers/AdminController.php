@@ -2,41 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Categories;
 use App\Promo;
 
-class productController extends Controller
+class AdminController extends Controller
 {
-
     public function index()
     {
-        if (isset($_GET['price'])) {
-            $products = Product::all()->sortBy('price');
-            return view('products.products', ['products' => $products]);
-        }
-        if (isset($_GET['stock'])) {
-            $products = Product::all()->sortBy('stock');
-            return view('products.products', ['products' => $products]);
-        } else {
-            $products = Product::all()->sortBy('name');
-            return view('products.products', ['products' => $products]);
-        }
-    }
-
-    public function admin(){
-
-    }
-
-    public function create()
-    {
-        $idCategorie = Categories::all()->toArray();
-        $idPromo = Promo::all()->toArray();
-        return view('admin.add-product')
-        ->with(['idCategorie' => $idCategorie])
-            ->with(['idPromo'=>$idPromo]);
+        $Products = Product::all()->toArray();
+        return view('admin.welcome', compact('Products'));
     }
 
     public function store(Request $request)
@@ -51,22 +27,20 @@ class productController extends Controller
             'categories_id' => 'required|numeric',
             'promo_id' => 'required|numeric',
         ]);
-
         Product::create($product);
 
         return redirect('/admin')
             ->with('flash_message', ' Niquel, c\'est bien ajouté ')
             ->with('flash_type', 'alert-success');
     }
-
-
-    public function show($id)
+    public function create()
     {
-        $results = Product::find($id);
-        return view('products/product', ['product' => $results]);
+        $idCategorie = Categories::all()->toArray();
+        $idPromo = Promo::all()->toArray();
+        return view('admin.add-product')
+            ->with(['idCategorie' => $idCategorie])
+            ->with(['idPromo'=>$idPromo]);
     }
-
-
     public function edit($id)
     {
         $product = Product::with(['Promo'])->find($id);
@@ -75,8 +49,6 @@ class productController extends Controller
             ->with(['product' => $product]);
 
     }
-
-
     public function update(Request $request, $id)
     {
 //        dd($request);
@@ -93,8 +65,6 @@ class productController extends Controller
             ->with('flash_message', ' Produit mis à jour ')
             ->with('flash_type', 'alert-warning');
     }
-
-
     public function destroy($id)
     {
         $product = Product::find($id);

@@ -29,10 +29,6 @@ class PageController extends Controller
             'contacts' => $board
         ]);
     }
-    public function admin()
-    {
-        $Products = Product::all()->toArray();
-        return view('admin.welcome', compact('Products'));
-    }
+
 }
 
