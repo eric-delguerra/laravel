@@ -69,13 +69,17 @@ class productController extends Controller
 
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('admin.edit', compact('product','id'));
+        $product = Product::with(['Promo'])->find($id);
+       // $promo = Promo::all();
+        return view('admin.edit')
+            ->with(['product' => $product]);
+
     }
 
 
     public function update(Request $request, $id)
     {
+//        dd($request);
         $product = Product::find($id);
 
         $product->name = $request->get('name');
@@ -83,6 +87,7 @@ class productController extends Controller
         $product->stock = $request->get('stock');
         $product->weigth = $request->get('weigth');
         $product->description = $request->get('description');
+        $product->promo_id = $request->get('promo_id');
         $product->save();
         return redirect('admin')
             ->with('flash_message', ' Produit mis à jour ')
