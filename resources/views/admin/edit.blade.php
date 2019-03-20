@@ -12,7 +12,7 @@
             </ul>
         </div><br />
     @endif
-    <form method="post" action="{{action('productController@update', $id)}}">
+    <form method="post" action="{{action('AdminController@update', $id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">
