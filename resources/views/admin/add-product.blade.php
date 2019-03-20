@@ -32,7 +32,7 @@
                 </select>
                 <label> - Catégorie</label>
                 <select required name="promo_id">
-                    <option value="null">aucun</option>
+                    <option value="0">aucun</option>
                     @foreach($idPromo as $id)
                         <option value="{{$id['id']}}">{{$id['name']}}</option>
                     @endforeach
