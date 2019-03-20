@@ -10,14 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ // ********************   ADMIN   ********************** //
 
 Route::group(['prefix'=>'admin'],function (){
-    Route::get('/', 'PageController@admin');
-    Route::post('/', 'productController@store');
-    Route::get('/{id}', 'productController@create');
-    Route::resource('/product', 'productController') ;
-
+    Route::get('/', 'AdminController@index');
+    Route::post('/', 'AdminController@store');
+    Route::get('/{id}', 'AdminController@create');
+    Route::resource('/product', 'AdminController');
 });
+
+
+// ********************   Utilisateur   ********************** //
 
 // Acceuil
 
@@ -25,11 +28,8 @@ Route::get('/', 'PageController@index');
 
 // Produits
 
-Route::get('/products', 'productController@index');
-
-//Promo
-//Route::resource('/admin/promo', );
-//Route::resource('/promo', 'productController');
+Route::get('/products', 'ProductController@index');
+Route::get('/product/{id}', 'ProductController@show');
 
 // Panier
 
@@ -42,15 +42,3 @@ Route::get('/basket', function () {
 //Route::get('/contacts', 'PageController@contacts');
 Route::get('/contacts/{id}', 'PageController@contact');
 
-
-// Admin
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('/auth', function(){
-    return view('auth.login');
-});
