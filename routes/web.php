@@ -15,7 +15,8 @@ Route::group(['prefix'=>'admin'],function (){
     Route::get('/', 'PageController@admin');
     Route::post('/', 'productController@store');
     Route::get('/{id}', 'productController@create');
-    Route::resource('/product', 'productController') ;
+    Route::resource('/product', 'productController');
+    Route::get('/category', 'PageController@admin');
 
 });
 
