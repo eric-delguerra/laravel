@@ -43,10 +43,13 @@ class AdminController extends Controller
     }
     public function edit($id)
     {
-        $product = Product::with(['Promo'])->find($id);
-       // $promo = Promo::all();
+//        $product = Product::with(['Promo'])->find($id);
+        $product = Product::find($id);
+        $promo = Promo::all();
+//        dump($product->id);
         return view('admin.edit')
-            ->with(['product' => $product]);
+            ->with(['product' => $product])
+        ->with(['promo' => $promo]);
 
     }
     public function update(Request $request, $id)

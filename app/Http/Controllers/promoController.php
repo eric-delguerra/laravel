@@ -16,7 +16,8 @@ class promoController extends Controller
      */
     public function index()
     {
-        //
+        $promos = Promo::all()->toArray();
+        return view('admin.gestionPromo', compact('promos'));
     }
 
     /**
@@ -59,7 +60,9 @@ class promoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $promo = Promo::find($id);
+        return view('admin.editPromo')
+            ->with(['promo' => $promo]);
     }
 
     /**
@@ -69,9 +72,25 @@ class promoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $promo, $id)
     {
-        //
+//        $promo = Promo::find($id);
+
+        $promo = $this->validate(\request(),[
+            'name'=>'required',
+            'price'=>'required|numeric',
+            'type'=>'required|numeric',
+            'description'=>'->nullable'
+        ]);
+
+//        $promo->name = $request->get('name');
+//        $promo->value = $request->get('price');
+//        $promo->type = $request->get('type');
+//        $promo->description = $request->get('description');
+        $promo->save();
+        return redirect('/promo')
+            ->with('flash_message', ' Produit mis à jour ')
+            ->with('flash_type', 'alert-warning');
     }
 
     /**

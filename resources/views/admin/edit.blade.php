@@ -13,8 +13,9 @@
             </ul>
         </div><br />
     @endif
-
-    <form method="post" action="{{action('AdminController@update', $id)}}">
+    {{--@dump($product)--}}
+{{--    @dd($product->id);--}}
+    <form method="post" action="{{action('AdminController@update', $product->id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">
@@ -45,6 +46,15 @@
                 <input type="text" class="form-control" name="stock" value="{{$product->stock}}">
             </div>
         </div>
+        @foreach($promo as $id)
+            {{var_dump($id->id)}}
+            {{dd($product->Promo->name)}}
+            @if ($id -> id == $product -> promo_id)
+                <option value="{{$id['id']}}" selected>{{$id['name']}}</option>
+            @else
+                <option value="{{$id['id']}}">{{$id['name']}}</option>
+            @endif
+        @endforeach
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
@@ -52,8 +62,14 @@
                 <select required name="promo_id">
                     <option value="0">aucun</option>
                 @foreach($promo as $id)
+                    {{var_dump($id->id)}}
+                    {{var_dump($product -> promo_id)}}
+                    @if ($id -> id == $product -> promo_id)
+                        <option value="{{$id['id']}}" selected>{{$id['name']}}</option>
+                    @else
                         <option value="{{$id['id']}}">{{$id['name']}}</option>
-                    @endforeach
+                    @endif
+                @endforeach
                 </select>
             </div>
         </div>
