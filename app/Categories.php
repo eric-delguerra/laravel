@@ -10,7 +10,8 @@ class Categories extends Model
 
     public static $rules = 
     [
-            'name' => 'required|min:4'
+            'name' => 'required|min:4|unique:categories'
+            
     ];
 
     public function Product()

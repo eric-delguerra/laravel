@@ -1,8 +1,13 @@
 @extends('AdminCategoryLayout')
 
-@section('content')
 <div class="container">
-    <h2 class="presentation">Editer une catégorie</h2><br  />
+    @section('content')
+</div>
+<br><br>
+<div class="container">
+    <ul>
+        <h2 class="presentation">Editer une catégorie</h2><br  />
+    </ul>
     {{-- @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -13,26 +18,25 @@
         </div><br />
     @endif --}}
 
-    @include('errors')
+    <ul>
+        @include('errors')
+    </ul>
 
-    <form method="post" action="{{action('CategoryController@update', $id)}}">
-        {{csrf_field()}}
-        <input name="_method" type="hidden" value="PATCH">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <label for="name">Nom:</label>
-                <input type="text" class="form-control" name="name" value="{{$category->name}}">
-            </div>
-        </div>
-        
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
+    <div class="presentation">
+        <form method="post" action="{{action('CategoryController@update', $id)}}">
+                @csrf
+        {{-- {{csrf_field()}} --}}
+        <ul>
+            <input name="_method" type="hidden" value="PATCH">
+        </ul>
+        <ul>
+            <input type="text" class="form-control" name="name" value="{{$category->name}}">
+        </ul>
+        <ul>
             <button type="submit" class="btn btn-success" style="margin-left:38px">Mettre à jour</button>
-        </div>
+        </ul>
+        </form>
     </div>
-    </form>
-
+</div>
 
 @endsection

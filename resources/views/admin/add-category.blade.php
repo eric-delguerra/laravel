@@ -1,41 +1,38 @@
 @extends('AdminCategoryLayout')
 
-@section('content')
-    @if ($errors->any())
-
 <div class="container">
-    @foreach ($errors->all() as $error)
-        <div class="alert alert-danger">
-            {{ $error }}
-        </div>
-    @endforeach
+        @section('content')  
 </div>
+<br><br>
+<div class="container">
+    <ul>
+        <h2 class="presentation">Ajouter une catégorie</h2>
+    </ul>
+    <br>
+    <ul>
+        @include('errors')
+    </ul>
+        {{-- @if ($errors->any())
+            <div class="container">
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        {{ $error }}
+                    </div>
+                @endforeach
+            </div>
+        @endif --}}
 
-
-
-    @endif
-    <h2 class="presentation">Ajouter une catégorie</h2>
     <div class="presentation">
-        <form action="/admin" method="post">
+        <form method="post" action="/admin" >
             @csrf
-            <ul> <input type="text" name="name" required placeholder="Nouvelle catégorie"></ul>
-            <ul>
-                {{-- <select required name="categories_id">
-                    @dump($idCategorie);
-                    @foreach($idCategorie as $id)
-                        <option value="{{$id['id']}}">{{$id['name']}}</option>
-                    @endforeach
-                </select> --}}
-                {{-- <label> - Catégorie</label>
-                <select required name="promo_id">
-                    <option value="0">aucun</option>
-                    @foreach($idPromo as $id)
-                        <option value="{{$id['id']}}">{{$id['name']}}</option>
-                    @endforeach
-                </select> --}}
-                {{-- <label> - Promo</label> --}}
-            </ul>
-            <button class="btn-primary" type="submit">Ajouter</button>
+                <ul>
+                    <input type="text" class="form-control" name="name" placeholder="Nouvelle catégorie">
+                </ul>
+                <ul>
+                    <button type="submit" class="btn btn-success" style="margin-left:38px">Ajouter</button>
+                </ul>
         </form>
     </div>
+</div>
+
 @endsection

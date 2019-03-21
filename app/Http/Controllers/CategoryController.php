@@ -18,9 +18,10 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $category = $this->validate(request(), [
-            'name' => 'required',
-        ]);
+        // $category = $this->validate(request(), [
+        //     'name' => 'required',
+        // ]);
+        $this->validate($request, Categories::$rules);
         Categories::create($category);
 
         return redirect('/admin/category')
