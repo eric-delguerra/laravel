@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h2 class="presentation">Editer une catégorie</h2><br  />
-    @if ($errors->any())
+    {{-- @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -11,7 +11,10 @@
                 @endforeach
             </ul>
         </div><br />
-    @endif
+    @endif --}}
+
+    @include('errors')
+
     <form method="post" action="{{action('CategoryController@update', $id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
