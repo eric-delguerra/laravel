@@ -35,6 +35,8 @@ Route::get('/product/{id}', 'ProductController@show');
 
 Route::get('orders/basket', 'BasketController@index');
 Route::post('/', 'BasketController@addProduct');
+Route::post('/destroy', 'BasketController@destroy');
+Route::post('/validate', 'BasketController@store');
 
 // Contacts
 
