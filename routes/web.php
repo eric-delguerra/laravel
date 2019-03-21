@@ -44,3 +44,6 @@ Route::get('add-to-cart/{id}', 'CartController@addToCart');
 //Route::get('/contacts', 'PageController@contacts');
 Route::get('/contacts/{id}', 'PageController@contact');
 
+//formulaire de contact
+Route::get('/auth/Form', 'FormController@create');
+Route::post('/auth/Form/result', 'FormController@store');

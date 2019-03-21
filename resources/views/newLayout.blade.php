@@ -57,8 +57,9 @@
 </div>
 
 
-</div>
+
 <!-- /.container -->
+@yield('content')
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
