@@ -33,9 +33,8 @@ Route::get('/product/{id}', 'ProductController@show');
 
 // Panier
 
-Route::get('/basket', function () {
-    return view('orders/basket');
-});
+Route::get('orders/basket', 'BasketController@index');
+Route::post('/', 'BasketController@addProduct');
 
 // Contacts
 

@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}"/>
 </head>
 <body>
-
+<a href="{{url('orders/basket')}}"> PANIER</a>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

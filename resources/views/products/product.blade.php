@@ -17,7 +17,12 @@
                     {{ $product->price/100 }} €
                 </div>
                 <div class="col p-2" >
-                    <button type="submit">Acheter</button>
+                    <form action="{{ action('BasketController@addProduct')}}" method="post">
+                        @csrf
+                        <input type="number" min="0" name="qte">
+                        <input type="hidden" value="{{$product->id}}" required name="id">
+                        <button type="submit">Acheter</button>
+                    </form>
                 </div>
 
             </div>
