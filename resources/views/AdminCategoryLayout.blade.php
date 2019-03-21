@@ -27,9 +27,9 @@
     </div>
     <div class="links">
         <a href="{{ url('/admin') }}"> AdminHome</a>
-        <a href="{{url('admin/create')}}"> Ajouter un produit</a>
-        <a href="{{url('admin/category/')}}"> Gestion des catégories</a>
-        <a href="{{url('admin/promo/')}}"> gestion promo</a>
+        <a href="{{url('admin/category/create')}}"> Ajouter une catégorie</a>
+        {{-- <a href="{{url('admin/promo/')}}"> gestion promo</a> --}}
+        <a href="{{url('admin/category')}}"> Gestion des catégories</a>
         <a href="{{url('/')}}"> Retour à la navigation</a>
     </div>
     @yield('content')

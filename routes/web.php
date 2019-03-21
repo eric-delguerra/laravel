@@ -12,12 +12,18 @@
 */
  // ********************   ADMIN   ********************** //
 
-Route::group(['prefix'=>'admin'],function (){
+Route::group(['prefix'=>'admin'],function ()
+{
     Route::get('/', 'AdminController@index');
     Route::post('/', 'AdminController@store');
-    Route::get('/{id}', 'AdminController@create');
+    // Route::get('/{id}', 'AdminController@create');
+    Route::get('/create', 'AdminController@create');
     Route::resource('/product', 'AdminController');
-    Route::get('/category', 'PageController@admin');
+    // Routes Category
+    Route::get('/category', 'CategoryController@index');
+    // Route::post('/category', 'CategoryController@index');
+    Route::post('/', 'CategoryController@store');
+    Route::resource('/category', 'CategoryController');
 
 });
 
