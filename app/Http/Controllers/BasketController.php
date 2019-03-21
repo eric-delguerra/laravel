@@ -63,6 +63,7 @@ class BasketController extends Controller
             $qte['quantity'] = $table['qte'];
             $order->product()->attach($data, $qte);
         }
+        session()->forget('panier');
         return view('welcome');
     }
 }
