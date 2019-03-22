@@ -1,9 +1,8 @@
 @extends('AdminCategoryLayout')
 
-<div class="container">
-    @section('content')
-</div>
-<br><br>
+@section('content')
+
+{{-- <br><br> --}}
 <div class="container">
     <ul>
         <h2 class="presentation">Editer une catégorie</h2><br  />

@@ -3,7 +3,7 @@
 <div class="container">
         @section('content')  
 </div>
-<br><br>
+{{-- <br><br> --}}
 <div class="container">
     <ul>
         <h2 class="presentation">Ajouter une catégorie</h2>

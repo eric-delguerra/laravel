@@ -19,7 +19,7 @@ Route::group(['prefix'=>'admin'],function ()
     // Route::get('/{id}', 'AdminController@create');
     Route::get('/create', 'AdminController@create');
     Route::resource('/product', 'AdminController');
-    // Routes Category
+    /* Routes Category !!! Fini: Ne surtout pas effacer !!! */
     Route::get('/category', 'CategoryController@index');
     // Route::get('/category/edit', 'CategoryController@edit');
     // Route::post('/category', 'CategoryController@index');
@@ -46,8 +46,7 @@ Route::get('/basket', function () {
     return view('orders/basket');
 });
 
-// Contacts
-
+/* Contacts !!! a finir !!! */
 //Route::get('/contacts', 'PageController@contacts');
 //Route::get('/contacts/{id}', 'PageController@contact');
 Route::get('contacts/{id}', 'PageController@contact')->name('contacts');
