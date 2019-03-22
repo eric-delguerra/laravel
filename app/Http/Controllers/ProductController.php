@@ -20,10 +20,12 @@ class productController extends Controller
         }
         if (isset($_GET['stock'])) {
             $products = Product::all()->sortBy('stock');
-            return view('products.products', ['products' => $products]);
+            $reduc = $this->reduc($products);
+            return view('products.products', ['products' => $products], ['reduc' =>$reduc]);
         } else {
             $products = Product::all()->sortBy('name');
-            return view('products.products', ['products' => $products]);
+            $reduc = $this->reduc($products);
+            return view('products.products', ['products' => $products], ['reduc' =>$reduc]);
         }
     }
 

@@ -11,7 +11,7 @@
                 <th>Value</th>
                 <th>Type</th>
                 <th>Action</th>
-                <th><a href="{{action('promoController@create')}}" class="btn btn-success">Ajouter un produit</a></th>
+                <th><a href="{{action('promoController@create')}}" class="btn btn-success">Ajouter une promo</a></th>
             </tr>
             </thead>
             <tbody>
