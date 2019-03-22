@@ -25,13 +25,12 @@
             {{--<ul> <input type="number" name="categories_id"required><label> - Catégorie </label></ul>--}}
 
                 <select required name="categories_id">
-                    @dump($idCategorie);
                 @foreach($idCategorie as $id)
                         <option value="{{$id['id']}}">{{$id['name']}}</option>
                     @endforeach
                 </select>
                 <label> - Catégorie</label>
-                <select required name="promo_id">
+                <select required name="promos_id">
                     <option value="0">aucun</option>
                     @foreach($idPromo as $id)
                         <option value="{{$id['id']}}">{{$id['name']}}</option>

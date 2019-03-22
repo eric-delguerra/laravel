@@ -28,22 +28,47 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="form-group col-md-4">
-                    <label for="price">Valeur:</label>
+                    <label for="value">Valeur (en cts ou en %):</label>
                     <input type="text" class="form-control" name="value" value="{{$promo->value}}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="form-group col-md-4">
-                    <label for="price">Type:</label>
-                    <input type="text" class="form-control" name="type" value="{{$promo->type}}">
+                    <label for="type">Type:</label>
+                    <select required name="type">
+                        @switch($promo->type)
+                            @case(1)
+                                <option value="1" selected>reduction fixe</option>
+                                <option value="2">reduction en pourcentage</option>
+                            @break
+                            @case(2)
+                                <option value="1">reduction fixe</option>
+                                <option value="2" selected>reduction en pourcentage</option>
+                            @break
+                        @endswitch
+                    </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="form-group col-md-4">
-                    <label for="price">Description:</label>
+                    <label for="description">Description:</label>
                     <textarea class="form-control" name="description">{{$promo->description}}</textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="form-group col-md-4">
+                    <label for="description">Date de debut:</label>
+                    <input type="date" class="form-control" name="promo_start" value="{{$promo->promo_start}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="form-group col-md-4">
+                    <label for="description">Date de fin:</label>
+                    <input type="date" class="form-control" name="promo_end" value="{{$promo->promo_end}}">
                 </div>
             </div>
             <div class="row">

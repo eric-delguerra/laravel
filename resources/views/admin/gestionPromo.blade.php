@@ -10,16 +10,22 @@
                 <th>Name</th>
                 <th>Value</th>
                 <th>Type</th>
-                <th colspan="2">Action</th>
+                <th>Action</th>
+                <th><a href="{{action('promoController@create')}}" class="btn btn-success">Ajouter un produit</a></th>
             </tr>
             </thead>
             <tbody>
-{{--            @dd($promos);--}}
             @foreach($promos as $promo)
                 <tr>
                     <td>{{$promo['id']}}</td>
                     <td>{{$promo['name']}}</td>
-                    <td>{{$promo['value']/100}}€</td>
+                    @if ($promo['type']==1)
+                        <td>{{$promo['value']/100}}€</td>
+                    @elseif($promo['type']==2)
+                        <td>{{$promo['value']}}%</td>
+                    @else
+                        <td>{{$promo['value']}}</td>
+                    @endif
                     <td>{{$promo['type']}}</td>
                     <td><a href="{{action('promoController@edit', $promo['id'])}}" class="btn btn-warning">Edit</a></td>
                     <td>

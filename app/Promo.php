@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class promo extends Model
+class Promo extends Model
 {
-    protected $fillable = ['name','description','value','type'];
+    protected $fillable = ['name','description','value','type','promo_start', 'promo_end'];
     public $timestamps = false;
 
-    public function Products()
+    public function products()
     {
-        return $this->hasMany('App\Product');
+        return $this->hasMany(Product::class);
     }
 }

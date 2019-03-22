@@ -46,29 +46,18 @@
                 <input type="text" class="form-control" name="stock" value="{{$product->stock}}">
             </div>
         </div>
-        @foreach($promo as $id)
-            {{var_dump($id->id)}}
-            {{dd($product->Promo->name)}}
-            @if ($id -> id == $product -> promo_id)
-                <option value="{{$id['id']}}" selected>{{$id['name']}}</option>
-            @else
-                <option value="{{$id['id']}}">{{$id['name']}}</option>
-            @endif
-        @endforeach
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label>Promo: </label>
-                <select required name="promo_id">
+                <select required name="promos_id">
                     <option value="0">aucun</option>
                 @foreach($promo as $id)
-                    {{var_dump($id->id)}}
-                    {{var_dump($product -> promo_id)}}
-                    @if ($id -> id == $product -> promo_id)
-                        <option value="{{$id['id']}}" selected>{{$id['name']}}</option>
-                    @else
+
+                    {{--<option value="{{$id['id']}}" selected>{{$id['name']}}</option>--}}
+
                         <option value="{{$id['id']}}">{{$id['name']}}</option>
-                    @endif
+
                 @endforeach
                 </select>
             </div>

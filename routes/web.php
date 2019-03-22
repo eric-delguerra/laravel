@@ -18,6 +18,7 @@ Route::group(['prefix'=>'admin'],function (){
     Route::get('/create', 'AdminController@create');
     Route::resource('/product', 'AdminController');
     Route::get('/promo', 'promoController@index' );
+    Route::post('/promo', 'promoController@store');
     Route::resource('/promo', 'promoController');
 });
 
