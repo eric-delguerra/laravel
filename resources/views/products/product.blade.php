@@ -19,9 +19,15 @@
                 <div class="col p-2" >
                     <form action="{{ action('BasketController@addProduct')}}" method="post">
                         @csrf
-                        <input type="number" min="0" name="qte">
+                        @if($product->stock > 0)
+                        <p> Vite ! Il en reste {{ $product->stock }} en stock ! </p>
+
+                        <input type="number" min="0" max="{{ $product->stock }}" name="qte">
                         <input type="hidden" value="{{$product->id}}" required name="id">
                         <button type="submit">Acheter</button>
+                        @else
+                            <p>Désolé nous n'avons plus de cet article. </p>
+                        @endif
                     </form>
                 </div>
 

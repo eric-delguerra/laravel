@@ -29,6 +29,7 @@
         <a href="{{ url('/admin') }}"> AdminHome</a>
         <a href="{{url('admin/create')}}"> Ajouter un produit</a>
         <a href="{{url('admin/promo/')}}"> gestion promo</a>
+        <a href="{{ url('/admin/orders') }}"> Historique de commande</a>
         <a href="{{url('/')}}"> Retour à la navigation</a>
 
 

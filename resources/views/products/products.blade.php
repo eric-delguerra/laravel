@@ -65,12 +65,14 @@
                     <a href="product/{{ $prod->id }}"><img class="card-img-top" src="{{ asset("images/$prod->img") }}"
                                                            alt="{{ $prod->name }}" "></a>
                 </div>
-
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="product/{{ $prod->id }}">{{ $prod->name }}</a>
                     </h4>
                     <h5>{{ $prod->price/100 }} €</h5>
+                    @if($prod->stock < 1)
+                        <p style="color: red;">Produit indisponnible</p>
+                    @endif
                     <p class="card-text">{{str_limit($prod->description,$words = 25, $end = '...') }}</p>
                 </div>
                 <div class="card-footer">

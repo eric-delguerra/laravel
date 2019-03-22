@@ -17,9 +17,9 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light col">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
+    <div class="collapse navbar-collapse col-12" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto col">
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -47,6 +47,14 @@
         </ul>
     </div>
 </nav>
+<div class="container">
+    @if ( Session::has('flash_message') )
+
+        <div class="presentation alert {{ Session::get('flash_type') }}">
+            <h3>{{ Session::get('flash_message') }}</h3>
+        </div>
+    @endif
+</div>
 
 <div class="container">
     @yield('title')
@@ -58,7 +66,7 @@
     </div>
 </div>
 
-
+@yield('bottom')
 </div>
 
 <footer class="py-5 bg-dark">

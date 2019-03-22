@@ -33,11 +33,15 @@ class BasketController extends Controller
     public function index()
     {
         if (session('panier')) {
+            $i = 0;
+            $total = 0;
             foreach (session('panier') as $key => $id) {
                 $data[] = Product::find($id['id'])->toArray();
                 $qte[] = $id['qte'];
+                $total = $total + ($data[$i]['price']*$id['qte'])/100;
+                $i++;
             }
-            return view('orders.basket', ['data' => $data], ['qtes' => $qte]);
+            return view('orders.basket', ['data' => $data, 'qtes' => $qte, 'total' => $total]);
         }
         return view('orders.basket');
     }
@@ -56,14 +60,20 @@ class BasketController extends Controller
         $order = new Orders();
         $order->created_at = new \DateTime();
         $order->save();
-
         $items = \session('panier');
         foreach ($items as $key => $table){
             $data['id_product'] = $table['id'];
             $qte['quantity'] = $table['qte'];
             $order->product()->attach($data, $qte);
+            $stock = Product::find($data['id_product']);
+            $stock->stock = $stock->stock - $qte['quantity'];
+            $stock->save();
         }
         session()->forget('panier');
         return view('welcome');
+    }
+    public function admin(){
+        $orders = Orders::all();
+        return view('admin/basket', ['orders' => $orders]);
     }
 }
