@@ -112,4 +112,6 @@ class promoController extends Controller
             ->with('flash_message', 'Produit supprimé')
             ->with('flash_type', 'alert-danger');
     }
+
+
 }

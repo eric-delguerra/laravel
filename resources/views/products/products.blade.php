@@ -88,14 +88,23 @@
             <div class="card h-100">
                 <div style="width: 100%; height: 300px; overflow: hidden">
                     <a href="product/{{ $prod->id }}"><img class="card-img-top" src="{{ asset("images/$prod->img") }}"
-                                                           alt="{{ $prod->name }}" "></a>
+                                                           alt="{{ $prod->name }}"></a>
                 </div>
 
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="product/{{ $prod->id }}">{{ $prod->name }}</a>
                     </h4>
-                    <h5>{{ $prod->price/100 }} €</h5>
+                        @if (array_key_exists($prod->id,$reduc))
+                        <h5 style="text-decoration: line-through">{{ $prod->price/100 }} €</h5>
+                        @foreach($reduc as $key => $value)
+                            @if($key === $prod->id)
+                            {{$value/100}} €
+                            @endif
+                        @endforeach
+                        @else
+                        <h5>{{ $prod->price/100 }} €</h5>
+                        @endif
                     <p class="card-text">{{str_limit($prod->description,$words = 25, $end = '...') }}</p>
                 </div>
                 <div class="card-footer">
