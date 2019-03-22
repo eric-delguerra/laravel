@@ -22,7 +22,7 @@
                         @if($product->stock > 0)
                         <p> Vite ! Il en reste {{ $product->stock }} en stock ! </p>
 
-                        <input type="number" min="0" max="{{ $product->stock }}" name="qte">
+                        <input type="number" min="1" max="{{ $product->stock }}" name="qte">
                         <input type="hidden" value="{{$product->id}}" required name="id">
                         <button type="submit">Acheter</button>
                         @else

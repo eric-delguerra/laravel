@@ -11,6 +11,9 @@ class BasketController extends Controller
 {
     public function addProduct(Request $request)
     {
+        $order = $this->validate(request(), [
+            'qte' => 'required|integer|min:1'
+        ]);
         $id = $request->input('id');
         $qte = $request->input('qte');
         $data = $request->session()->all();
