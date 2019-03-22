@@ -17,6 +17,7 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+//        dd($request->all());
         $product = $this->validate(request(), [
             'name' => 'required',
             'description' => 'required',
@@ -25,7 +26,7 @@ class AdminController extends Controller
             'stock' => 'required|numeric',
             'weigth' => 'required|numeric',
             'categories_id' => 'required|numeric',
-            'promo_id' => 'required|numeric',
+            'promos_id' => 'required|numeric',
         ]);
         Product::create($product);
 
@@ -43,19 +44,29 @@ class AdminController extends Controller
     }
     public function edit($id)
     {
+//        $product = Product::with(['Promo'])->find($id);
         $product = Product::find($id);
-        return view('admin.edit', compact('product','id'));
+//        dd($product);
+        $promo = Promo::all();
+//        dump($product->id);
+        return view('admin.edit')
+            ->with(['product' => $product])
+        ->with(['promo' => $promo]);
+
     }
     public function update(Request $request, $id)
     {
+//        dd($request);
         $product = Product::find($id);
-
+//        dump($product);
         $product->name = $request->get('name');
         $product->price = $request->get('price');
         $product->stock = $request->get('stock');
         $product->weigth = $request->get('weigth');
         $product->description = $request->get('description');
+        $product->promos_id = $request->get('promos_id');
         $product->save();
+//        @dd($product);
         return redirect('admin')
             ->with('flash_message', ' Produit mis à jour ')
             ->with('flash_type', 'alert-warning');

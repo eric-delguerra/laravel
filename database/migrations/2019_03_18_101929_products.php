@@ -22,9 +22,15 @@ class Products extends Migration
             $table->integer('weigth');
             $table->integer('stock');
             $table->integer('categories_id');
-            $table->unsignedInteger('promo_id');
+            $table->unsignedInteger('promos_id');
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
+            $table->foreign('categories_id')
+                ->references('id')->on('categories')
+                ->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('promos_id')
+                ->references('id')->on('promos')
+                ->onDelete('restrict')->onUpdate('restrict');
         });
     }
 

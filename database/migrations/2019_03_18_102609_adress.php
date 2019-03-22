@@ -17,11 +17,14 @@ class Adress extends Migration
             $table->increments('id');
             $table->integer('users_id');
             $table->string('street');
-            $table->integer('pstCode');
+            $table->string('pstCode');
             $table->string('city');
             $table->string('country');
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
+            $table->foreign('users_id')
+                ->references('id')->on('users')
+                ->onDelete('restrict')->onUpdate('restrict');
         });
     }
     /**

@@ -19,12 +19,17 @@ Route::group(['prefix'=>'admin'],function ()
     // Route::get('/{id}', 'AdminController@create');
     Route::get('/create', 'AdminController@create');
     Route::resource('/product', 'AdminController');
-    /* Routes Category !!! Fini: Ne surtout pas effacer !!! */
+
+//* Routes Category !!! Fini: Ne surtout pas effacer !!! *//
     Route::get('/category', 'CategoryController@index');
     // Route::get('/category/edit', 'CategoryController@edit');
     // Route::post('/category', 'CategoryController@index');
     Route::post('/', 'CategoryController@store');
     Route::resource('/category', 'CategoryController');
+//********************* Routes Promo *********************//
+    Route::get('/promo', 'promoController@index' );
+    Route::post('/promo', 'promoController@store');
+    Route::resource('/promo', 'promoController');
 
 });
 

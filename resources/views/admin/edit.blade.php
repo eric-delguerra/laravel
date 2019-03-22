@@ -1,6 +1,7 @@
 @extends('AdminLayout')
 
 @section('content')
+    {{--@dd($promo);--}}
 <div class="container">
     <h2 class="presentation">Editer un produit</h2><br  />
     @if ($errors->any())
@@ -12,7 +13,9 @@
             </ul>
         </div><br />
     @endif
-    <form method="post" action="{{action('AdminController@update', $id)}}">
+    {{--@dump($product)--}}
+{{--    @dd($product->id);--}}
+    <form method="post" action="{{action('AdminController@update', $product->id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">
@@ -41,6 +44,22 @@
             <div class="form-group col-md-4">
                 <label for="price">Stock:</label>
                 <input type="text" class="form-control" name="stock" value="{{$product->stock}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label>Promo: </label>
+                <select required name="promos_id">
+                    <option value="0">aucun</option>
+                @foreach($promo as $id)
+
+                    {{--<option value="{{$id['id']}}" selected>{{$id['name']}}</option>--}}
+
+                        <option value="{{$id['id']}}">{{$id['name']}}</option>
+
+                @endforeach
+                </select>
             </div>
         </div>
         <div class="row">

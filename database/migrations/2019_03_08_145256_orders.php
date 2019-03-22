@@ -15,9 +15,12 @@ class Orders extends Migration
     {
         Schema::create('orders', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('users_id');
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
+            $table->foreign('users_id')
+                ->references('id')->on('users')
+                ->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
