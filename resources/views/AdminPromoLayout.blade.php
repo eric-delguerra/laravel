@@ -76,7 +76,7 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">@yield('MetaTitle') Produits</h1>
+            <h1 class="jumbotron-heading">@yield('MetaTitle') Promo</h1>
             <p class="lead text-muted">Section Administration.<br> N'hésitez pas à faire n'importe quoi!!!</p>
             {{-- <p> --}}
                 {{-- <a href="#" class="btn btn-primary my-2">Parcourir le catalogue</a> --}}

@@ -1,4 +1,4 @@
-@extends('AdminLayout')
+@extends('AdminPromoLayout')
 @section('MetaTitle', 'Homepage Admin')
 @section('content')
     <div class="container">

@@ -1,4 +1,4 @@
-@extends('AdminLayout')
+@extends('AdminPromoLayout')
 
 @section('content')
     @if ($errors->any())
