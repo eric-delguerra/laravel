@@ -10,7 +10,7 @@ class Orders extends Model
         return $this->hasOne(Address::class);
     }
     public function Users() {
-        return $this->belongsTo(Users::class, 'user_id');
+        return $this->belongsTo(Users::class, 'users_id');
     }
     public function product() {
         return $this->belongsToMany('App\Product','orders_product', 'order_id','product_id', '', '',

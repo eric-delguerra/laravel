@@ -57,7 +57,7 @@ class BasketController extends Controller
                 $request->session()->forget("panier." . $key);
             }
         }
-        return view('welcome');
+        return view ('welcome');
     }
     public function store(){
         $order = new Orders();
@@ -76,6 +76,13 @@ class BasketController extends Controller
         return view('welcome');
     }
     public function admin(){
+        $orders = Orders::all();
+        return view('admin/basket', ['orders' => $orders]);
+    }
+    public function deleteOrder(Request $request) {
+        $order = Orders::find($request->id);
+        $order->product()->detach();
+        $order->delete();
         $orders = Orders::all();
         return view('admin/basket', ['orders' => $orders]);
     }

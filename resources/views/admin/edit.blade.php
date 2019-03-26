@@ -36,7 +36,7 @@
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="price">Poids:</label>
-                <input type="text" class="form-control" name="weight" value="{{$product->weight}}">
+                <input type="text" class="form-control" name="weight" value="{{$product->weight}}" min="1">
             </div>
         </div>
         <div class="row">
@@ -53,11 +53,7 @@
                 <select required name="promos_id">
                     <option value="0">aucun</option>
                 @foreach($promo as $id)
-
-                    {{--<option value="{{$id['id']}}" selected>{{$id['name']}}</option>--}}
-
                         <option value="{{$id['id']}}">{{$id['name']}}</option>
-
                 @endforeach
                 </select>
             </div>

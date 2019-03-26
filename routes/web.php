@@ -53,6 +53,7 @@ Route::get('orders/basket', 'BasketController@index');
 Route::post('/', 'BasketController@addProduct');
 Route::post('/destroy', 'BasketController@destroy');
 Route::post('/validate', 'BasketController@store');
+Route::post('/admin', 'BasketController@deleteOrder');
 
 /* Contacts !!! a finir !!! */
 //Route::get('/contacts', 'PageController@contacts');

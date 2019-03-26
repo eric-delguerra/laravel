@@ -16,7 +16,7 @@
     @endif
     <h2 class="presentation">Ajouter un produit</h2>
     <div class="presentation">
-        <form action="/admin" method="post">
+        <form action="{{ action('AdminController@store') }}" method="post">
             @csrf
 
             <ul> <input type="text" name="name" required><label> - Nouveau nom</label></ul>
