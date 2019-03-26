@@ -12,7 +12,6 @@ class PageController extends Controller
     {
         $Products = Product::all();
         return view('welcome', ['Products' => $Products]);
-
     }
     public function contact($id)
     {

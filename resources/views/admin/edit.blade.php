@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="name">Nom:</label>
+                <label for="name" required>Nom:</label>
                 <input type="text" class="form-control" name="name" value="{{$product->name}}">
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="price">Poids:</label>
-                <input type="text" class="form-control" name="weigth" value="{{$product->weigth}}">
+                <input type="text" class="form-control" name="weight" value="{{$product->weight}}">
             </div>
         </div>
         <div class="row">

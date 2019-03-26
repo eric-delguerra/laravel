@@ -18,10 +18,12 @@
     <div class="presentation">
         <form action="/admin" method="post">
             @csrf
-             <input type="text" name="name" required><label> - Nouveau nom</label>
-            <input type="text" name="description"required><label> - Description</label>
-            <input type="number" name="price"required><label> - Prix (en cts)</label>
-            <input type="number" name="weigth"required><label> - Poids </label>
+
+            <ul> <input type="text" name="name" required><label> - Nouveau nom</label></ul>
+            <ul><input type="text" name="description"required><label> - Description</label></ul>
+            <ul> <input type="number" name="price"required><label> - Prix (en cts)</label></ul>
+            <ul> <input type="number" name="weight"required><label> - Poids </label></ul>
+
             {{--<ul> <input type="number" name="categories_id"required><label> - Catégorie </label></ul>--}}
 
                 <select required name="categories_id">

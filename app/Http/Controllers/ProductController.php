@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Product;
-use App\Categories;
-use App\Promo;
+
 
 class productController extends Controller
 {
-
     public function index()
     {
         if (isset($_GET['price'])) {
@@ -28,7 +24,6 @@ class productController extends Controller
             return view('products.products', ['products' => $products], ['reduc' =>$reduc]);
         }
     }
-
     public function show($id)
     {
         $results = Product::find($id);

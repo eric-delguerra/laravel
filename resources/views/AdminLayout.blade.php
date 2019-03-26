@@ -30,7 +30,10 @@
         <a href="{{url('admin/create')}}"> Ajouter un produit</a>
         <a href="{{url('admin/category')}}"> Gestion des catégories</a>
         <a href="{{url('admin/promo')}}"> gestion promo</a>
+        <a href="{{ url('/admin/orders') }}"> Historique de commande</a>
         <a href="{{url('/')}}"> Retour à la navigation</a>
+
+
     </div>
     @yield('content')
     {{--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--}}

@@ -7,6 +7,7 @@
     <title>@yield('MetaTitle')</title>
 
     <!-- Fonts -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -16,9 +17,9 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
+    <div class="collapse navbar-collapse col-12" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto col">
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -40,15 +41,24 @@
             <li class="nav-item">
                 <a class="nav-link" href="/admin">Become an admin</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('orders/basket')}}">Panier</a>
+            </li>
         </ul>
     </div>
 </nav>
-<!-- Page Content -->
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="my-4">Au bon marché</h1>
+    @if ( Session::has('flash_message') )
+
+        <div class="presentation alert {{ Session::get('flash_type') }}">
+            <h3>{{ Session::get('flash_message') }}</h3>
         </div>
+    @endif
+</div>
+
+<div class="container">
+    @yield('title')
+    <div class="row" >
         @yield('filters')
         <div class="row">
             @yield('listProd')
@@ -56,19 +66,15 @@
     </div>
 </div>
 
-
+@yield('bottom')
 </div>
-<!-- /.container -->
 
-<!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright © Le bon marché 2019</p>
+        <p class="m-0 text-center text-white fixed-bottom">Copyright © Le bon marché 2019</p>
     </div>
-    <!-- /.container -->
 </footer>
 
-<!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

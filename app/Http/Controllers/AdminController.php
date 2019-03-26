@@ -24,7 +24,7 @@ class AdminController extends Controller
             'img' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
-            'weigth' => 'required|numeric',
+            'weight' => 'required|numeric',
             'categories_id' => 'required|numeric',
             'promos_id' => 'required|numeric',
         ]);
@@ -62,7 +62,7 @@ class AdminController extends Controller
         $product->name = $request->get('name');
         $product->price = $request->get('price');
         $product->stock = $request->get('stock');
-        $product->weigth = $request->get('weigth');
+        $product->weight = $request->get('weight');
         $product->description = $request->get('description');
         $product->promos_id = $request->get('promos_id');
         $product->save();

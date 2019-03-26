@@ -19,6 +19,8 @@ Route::group(['prefix'=>'admin'],function ()
     // Route::get('/{id}', 'AdminController@create');
     Route::get('/create', 'AdminController@create');
     Route::resource('/product', 'AdminController');
+    
+    Route::get('/orders', 'BasketController@admin');
 
 //* Routes Category !!! Fini: Ne surtout pas effacer !!! *//
     Route::get('/category', 'CategoryController@index');
@@ -47,9 +49,10 @@ Route::get('/product/{id}', 'ProductController@show');
 
 // Panier
 
-Route::get('/basket', function () {
-    return view('orders/basket');
-});
+Route::get('orders/basket', 'BasketController@index');
+Route::post('/', 'BasketController@addProduct');
+Route::post('/destroy', 'BasketController@destroy');
+Route::post('/validate', 'BasketController@store');
 
 /* Contacts !!! a finir !!! */
 //Route::get('/contacts', 'PageController@contacts');
