@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categories extends Model
 {
-    public function Product()
-    {
-        return $this->hasMany('App\Product');
-    }
+//    protected $fillable = ['name'];
+//    public static $rules =
+//        [
+//            'name' => 'required|min:4|unique:categories'
+//
+//        ];
 }

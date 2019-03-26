@@ -87,8 +87,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
                 <div style="width: 100%; height: 300px; overflow: hidden">
-                    <a href="product/{{ $prod->id }}"><img class="card-img-top" src="{{ asset("images/$prod->img") }}"
-                                                           alt="{{ $prod->name }}" "></a>
+                    <a href="product/{{ $prod->id }}"><img class="card-img-top" src="{{ asset("/images/" . $prod->Images) }}" alt="{{ $prod->name }}"></a>
                 </div>
 
                 <div class="card-body">

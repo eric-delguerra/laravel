@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FormController extends Controller
 {
@@ -22,6 +23,13 @@ class FormController extends Controller
                   ],
                 ];
                 return view ('auth.result', $data);
+    }
+
+    public function index()
+    {
+        $patate = DB::select('select * from products where price <10');
+//        dd($patate);
+        return view('auth.result',['product'=>$patate]);
     }
 
 }

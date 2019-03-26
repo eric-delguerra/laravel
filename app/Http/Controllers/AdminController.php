@@ -53,7 +53,7 @@ class AdminController extends Controller
         $product->name = $request->get('name');
         $product->price = $request->get('price');
         $product->stock = $request->get('stock');
-        $product->weigth = $request->get('weigth');
+        $product->weight = $request->get('weight');
         $product->description = $request->get('description');
         $product->save();
         return redirect('admin')
@@ -69,4 +69,52 @@ class AdminController extends Controller
             ->with('flash_type', 'alert-danger');
 
     }
+
+    public function categories()
+    {
+        $categories = Categories::all();
+        return view ('/admin/categories', ['types'=>$categories]);
+
+    }
+
+    public function categoriesNew()
+    {
+        return view ('/admin/categoriesNew');
+
+    }
+
+    public function categoriesNewStore(Request $request)
+    {
+
+        $newObject = new Categories;
+        $newObject-> name = $request->input('categorieName');
+        $newObject->save();
+        return redirect('/admin/categories');
+    }
+
+    public function categoriesDelete($id)
+    {
+    $cat = Categories::find($id);
+    $cat->delete();
+
+    return redirect('/admin/categories');
+
+    }
+
+    public function categoriesUpdateForm($id)
+    {
+        $cat = Categories::find($id);
+        return view('/admin/categoriesNew', ['modif' => $cat]);
+    }
+
+    public function categoriesUpdate($id, Request $request)
+    {
+//        $this->validate($request, Categories::$rules);
+        $cat = Categories::find($id);
+        $cat-> name = $request->input('categorieName');
+        $cat->save();
+        return redirect ('/admin/categories');
+
+    }
+
 }

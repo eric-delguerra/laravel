@@ -1,6 +1,13 @@
 @extends('newLayout')
 
 @section ('content')
+    @dd($product)
+
+    @if (($_POST['firstname']==null)&&($_POST['lastname']==null)&&($_POST['content']==null)))
+
+    {{"ce formulaire est vide"}}
+
+    @else
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -12,5 +19,7 @@
     <p>Nom : <b>{{ $user['lastname'] }}</b></p>
     <p>What's on your mind? : <b>{{$user ['content']}}</b></p>
     </div>
+
+    @endif
 
 @endsection

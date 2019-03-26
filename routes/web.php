@@ -15,8 +15,15 @@
 Route::group(['prefix'=>'admin'],function (){
     Route::get('/', 'AdminController@index');
     Route::post('/', 'AdminController@store');
+    Route::get('/categories', 'AdminController@categories');
+    Route::get('/categories/new', 'AdminController@categoriesNew');
+    Route::get('categories/delete/{id}', 'AdminController@categoriesDelete');
+    Route::get('categories/update/{id}', 'AdminController@categoriesUpdateForm');
+    Route::post('categories/update/{id}', 'AdminController@categoriesUpdate');
+    Route::post('/categories/new', 'AdminController@categoriesNewStore');
     Route::get('/{id}', 'AdminController@create');
     Route::resource('/product', 'AdminController');
+
 });
 
 
@@ -47,3 +54,5 @@ Route::get('/contacts/{id}', 'PageController@contact');
 //formulaire de contact
 Route::get('/auth/Form', 'FormController@create');
 Route::post('/auth/Form/result', 'FormController@store');
+
+Route::get('/patate', 'FormController@index');
