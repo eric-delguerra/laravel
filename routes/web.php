@@ -59,3 +59,9 @@ Route::get('/contacts', 'ContactController@contact');
 //Route::get('/contacts/{id}', 'ContactController@contact');
 Route::get('contact/{id}', 'ContactController@perso');
 
+//pages d'erreurs
+
+Route::get('/404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
+
+Route::get('/405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
+
