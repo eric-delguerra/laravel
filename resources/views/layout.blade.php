@@ -38,6 +38,9 @@
                     </div>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/info">Info</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/admin">Become an admin</a>
                 </li>
                 <li class="nav-item">

@@ -64,6 +64,7 @@ class BasketController extends Controller
     {
         if (\Auth::check()) {
             $order = new Orders();
+            $order->users_id = \Auth::id();
             $order->created_at = new \DateTime();
             $order->save();
             $items = \session('panier');

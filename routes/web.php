@@ -12,7 +12,7 @@
 */
  // ********************   ADMIN   ********************** //
 
-Route::group(['prefix'=>'admin', 'middleware' => 'auth'],function ()
+Route::group(['prefix'=>'admin', 'middleware' => ['auth', 'admin']],function ()
 {
     Route::get('/', 'AdminController@index');
     Route::post('/', 'AdminController@store');
@@ -40,7 +40,7 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'],function ()
 
 // Acceuil
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'PageController@index')->name('acceuil');
 
 // Produits
 
@@ -64,3 +64,5 @@ Route::get('contacts/{id}', 'PageController@contact')->name('contacts');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/info', 'UsersController@index');

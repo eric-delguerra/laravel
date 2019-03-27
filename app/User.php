@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function Orders()
     {
-        return $this->hasMany(Orders::class);
+        return $this->hasMany(Orders::class, 'users_id');
     }
     public $remember_token=false;
 }
