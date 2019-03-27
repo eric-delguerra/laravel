@@ -96,3 +96,9 @@ a img {
 .tri div {
     margin-right: 1rem;
 }
+
+.descriptions {
+    background-color: lightblue;
+    padding-top: 20px;
+    width: 40%;
+    }

@@ -3,6 +3,8 @@
 @section('contact')
 
 
+
+
         <div class="col-md-3">
             <div class="card mb-4 box-shadow">
                  <img class="card-img-top" data-src="holder.js/100px25?theme=thumb&bg=55595c&fg=eceeef&text={{ $contact['firstName'] }}" alt="Card image cap">
@@ -23,6 +25,6 @@
                 </div>
             </div>
         </div>
-            <div>Cédric, grand amateur de mêmes en tous genre, </div>
+            <div class = "descriptions">{{$contact->description}} </div>
 
 @endsection
