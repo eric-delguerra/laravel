@@ -29,6 +29,7 @@
                 font-size: 3.5rem;
             }
         }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.3/examples/starter-template/starter-template.css" rel="stylesheet">
@@ -69,6 +70,14 @@
         </form>
     </div>
 </nav>
+<div class="container">
+    @if ( Session::has('flash_message') )
+
+        <div class="presentation alert {{ Session::get('flash_type') }}">
+            <h3>{{ Session::get('flash_message') }}</h3>
+        </div>
+    @endif
+</div>
 
 <main role="main" >
 

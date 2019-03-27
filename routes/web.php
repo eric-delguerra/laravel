@@ -12,7 +12,7 @@
 */
  // ********************   ADMIN   ********************** //
 
-Route::group(['prefix'=>'admin'],function ()
+Route::group(['prefix'=>'admin', 'middleware' => 'auth'],function ()
 {
     Route::get('/', 'AdminController@index');
     Route::post('/', 'AdminController@store');
@@ -50,9 +50,9 @@ Route::get('/product/{id}', 'ProductController@show');
 // Panier
 
 Route::get('orders/basket', 'BasketController@index');
-Route::post('/', 'BasketController@addProduct');
+Route::post('/ajout', 'BasketController@addProduct');
 Route::post('/destroy', 'BasketController@destroy');
-Route::post('/validate', 'BasketController@store');
+Route::post('/', 'BasketController@store');
 Route::post('/admin', 'BasketController@deleteOrder');
 
 /* Contacts !!! a finir !!! */
@@ -60,3 +60,7 @@ Route::post('/admin', 'BasketController@deleteOrder');
 //Route::get('/contacts/{id}', 'PageController@contact');
 Route::get('contacts/{id}', 'PageController@contact')->name('contacts');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

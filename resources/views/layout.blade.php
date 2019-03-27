@@ -11,13 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 </head>
 <body>
-@if ( Session::has('flash_message') )
 
-    <div class="alert {{ Session::get('flash_type') }}">
-        <h3>{{ Session::get('flash_message') }}</h3>
-    </div>
-
-@endif
     <nav class="navbar navbar-expand-lg navbar-light bg-light cal">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -26,6 +20,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/products">Liste des produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +46,14 @@
             </ul>
         </div>
     </nav>
+    <div class="container">
+        @if ( Session::has('flash_message') )
+
+            <div class="presentation alert {{ Session::get('flash_type') }}">
+                <h3>{{ Session::get('flash_message') }}</h3>
+            </div>
+        @endif
+    </div>
     <div class="content links">
         @yield('SubMenu')
     </div>

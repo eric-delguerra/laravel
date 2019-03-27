@@ -41,7 +41,7 @@ class BasketController extends Controller
             foreach (session('panier') as $key => $id) {
                 $data[] = Product::find($id['id'])->toArray();
                 $qte[] = $id['qte'];
-                $total = $total + ($data[$i]['price']*$id['qte'])/100;
+                $total = $total + ($data[$i]['price'] * $id['qte']) / 100;
                 $i++;
             }
             return view('orders.basket', ['data' => $data, 'qtes' => $qte, 'total' => $total]);
@@ -57,29 +57,41 @@ class BasketController extends Controller
                 $request->session()->forget("panier." . $key);
             }
         }
-        return view ('welcome');
-    }
-    public function store(){
-        $order = new Orders();
-        $order->created_at = new \DateTime();
-        $order->save();
-        $items = \session('panier');
-        foreach ($items as $key => $table){
-            $data['id_product'] = $table['id'];
-            $qte['quantity'] = $table['qte'];
-            $order->product()->attach($data, $qte);
-            $stock = Product::find($data['id_product']);
-            $stock->stock = $stock->stock - $qte['quantity'];
-            $stock->save();
-        }
-        session()->forget('panier');
         return view('welcome');
     }
-    public function admin(){
+
+    public function store()
+    {
+        if (\Auth::check()) {
+            $order = new Orders();
+            $order->created_at = new \DateTime();
+            $order->save();
+            $items = \session('panier');
+            foreach ($items as $key => $table) {
+                $data['id_product'] = $table['id'];
+                $qte['quantity'] = $table['qte'];
+                $order->product()->attach($data, $qte);
+                $stock = Product::find($data['id_product']);
+                $stock->stock = $stock->stock - $qte['quantity'];
+                $stock->save();
+            }
+            session()->forget('panier');
+            return view('welcome');
+        }
+        else return redirect('/')
+            ->with('flash_message', ' Merci de vous connecter avant de passer la commande ')
+            ->with('flash_type', 'alert-warning');
+
+    }
+
+    public function admin()
+    {
         $orders = Orders::all();
         return view('admin/basket', ['orders' => $orders]);
     }
-    public function deleteOrder(Request $request) {
+
+    public function deleteOrder(Request $request)
+    {
         $order = Orders::find($request->id);
         $order->product()->detach();
         $order->delete();

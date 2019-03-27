@@ -13,28 +13,28 @@
                     <th scope="col">Quantité</th>
                 </tr>
                 </thead>
-        @foreach($order->product as $prod)
+                @foreach($order->product as $prod)
 
                     <tbody>
                     <tr>
                         <th scope="row">{{ $prod->pivot->order_id }}</th>
-                        <td>{{ $order->Users->firstName }}</td>
-                        <td> <a href="/product/{{ $prod->pivot->product_id }}">
-                        {{ $prod->pivot->product_id }}
-                        </a></td>
+                        <td>{{ $order->User->firstName }}</td>
+                        <td><a href="/product/{{ $prod->pivot->product_id }}">
+                                {{ $prod->pivot->product_id }}
+                            </a></td>
                         <td>{{ $prod->pivot->quantity }}</td>
                     </tr>
                     </tbody>
 
 
-        @endforeach
-{{--                @dd($order->id)--}}<form action="{{ action('BasketController@deleteOrder') }}" method="post">
+                @endforeach
+                <form action="{{ action('BasketController@deleteOrder') }}" method="post">
                     @csrf
                     <input type="hidden" value="{{ $order->id }}" name="id">
                     <button type="submit">delete</button>
                 </form>
 
-    @endforeach
+                @endforeach
             </table>
         </div>
 @endsection
