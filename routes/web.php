@@ -10,19 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
- // ********************   ADMIN   ********************** //
+// ********************   ADMIN   ********************** //
 
-Route::group(['prefix'=>'admin'],function (){
+Route::group(['prefix'=>'admin'],function ()
+{
     Route::get('/', 'AdminController@index');
     Route::post('/', 'AdminController@store');
-    Route::get('/categories', 'AdminController@categories');
-    Route::get('/categories/new', 'AdminController@categoriesNew');
-    Route::get('categories/delete/{id}', 'AdminController@categoriesDelete');
-    Route::get('categories/update/{id}', 'AdminController@categoriesUpdateForm');
-    Route::post('categories/update/{id}', 'AdminController@categoriesUpdate');
-    Route::post('/categories/new', 'AdminController@categoriesNewStore');
-    Route::get('/{id}', 'AdminController@create');
+    // Route::get('/{id}', 'AdminController@create');
+    Route::get('/create', 'AdminController@create');
     Route::resource('/product', 'AdminController');
+
+    Route::get('/orders', 'BasketController@admin');
+
+//* Routes Category !!! Fini: Ne surtout pas effacer !!! *//
+    Route::get('/category', 'CategoryController@index');
+    // Route::get('/category/edit', 'CategoryController@edit');
+    // Route::post('/category', 'CategoryController@index');
+    Route::post('/', 'CategoryController@store');
+    Route::resource('/category', 'CategoryController');
+//********************* Routes Promo *********************//
+    Route::get('/promo', 'promoController@index' );
+    Route::post('/promo', 'promoController@store');
+    Route::resource('/promo', 'promoController');
 
 });
 
@@ -40,19 +49,13 @@ Route::get('/product/{id}', 'ProductController@show');
 
 // Panier
 
-Route::get('cart', function(){
-    return view ('Cart.cart');
-});
+Route::get('orders/basket', 'BasketController@index');
+Route::post('/', 'BasketController@addProduct');
+Route::post('/destroy', 'BasketController@destroy');
+Route::post('/validate', 'BasketController@store');
 
-Route::get('add-to-cart/{id}', 'CartController@addToCart');
+/* Contacts !!! a finir !!! */
+Route::get('/contacts', 'ContactController@contact');
+//Route::get('/contacts/{id}', 'ContactController@contact');
+Route::get('contact/{id}', 'ContactController@perso');
 
-    // Contacts
-
-//Route::get('/contacts', 'PageController@contacts');
-Route::get('/contacts/{id}', 'PageController@contact');
-
-//formulaire de contact
-Route::get('/auth/Form', 'FormController@create');
-Route::post('/auth/Form/result', 'FormController@store');
-
-Route::get('/patate', 'FormController@index');

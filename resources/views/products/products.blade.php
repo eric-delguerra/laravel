@@ -6,6 +6,8 @@
 @section('content', 'Liste des produits')
 @section('filters')
 
+{{--    @dd($products);--}}
+
     <div class="row tri">
         <div>
             <a href="/products?price" class="btn btn-outline-info">
