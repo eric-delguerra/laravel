@@ -1,3 +1,12 @@
+/*@font-face {*/
+    /*font-family: "Permanent_Marker";*/
+    /*src: url("C:\Windows\Fonts\Permanent_Marker.ttf");*/
+    /*!*src:*!*/
+            /*!*url("css/fonts/Harabara.woff") format("woff"),*!*/
+            /*!*url("css/fonts/Harabara.otf") format("opentype"),*!*/
+            /*!*url("css/fonts/Harabara.svg#filename") format("svg");*!*/
+/*}*/
+
 html, body {
     background-color: #fff;
     color: #636b6f;
@@ -102,3 +111,31 @@ a img {
     padding-top: 20px;
     width: 40%;
     }
+
+.Container {
+    display : flex;
+    flex-direction: column;
+
+}
+
+.WelcomeMessage {
+
+    padding-top: 20px;
+    background-color: lightblue;
+    font-size: 36px;
+
+    height : 215px;
+}
+
+ h1 {
+     margin: 40px ;
+     font-size: 60px;
+     font-family: 'Permanent Marker', cursive;
+}
+
+ .Caroussel {
+     margin-top: 30px;
+     display: flex;
+     justify-content: center;
+
+ }
