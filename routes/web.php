@@ -12,7 +12,7 @@
 */
  // ********************   ADMIN   ********************** //
 
-Route::group(['prefix'=>'admin'],function ()
+Route::group(['prefix'=>'admin', 'middleware' => 'admin'], function ()
 {
     Route::get('/', 'AdminController@index');
     Route::post('/', 'AdminController@store');
@@ -59,3 +59,7 @@ Route::post('/validate', 'BasketController@store');
 //Route::get('/contacts/{id}', 'PageController@contact');
 Route::get('contacts/{id}', 'PageController@contact')->name('contacts');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

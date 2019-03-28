@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Promo;
+
 
 
 class productController extends Controller
@@ -19,6 +21,7 @@ class productController extends Controller
             $reduc = $this->reduc($products);
             return view('products.products', ['products' => $products], ['reduc' =>$reduc]);
         } else {
+            //dd('hello');
             $products = Product::all()->sortBy('name');
             $reduc = $this->reduc($products);
             return view('products.products', ['products' => $products], ['reduc' =>$reduc]);
