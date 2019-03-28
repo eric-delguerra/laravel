@@ -18,16 +18,20 @@ class BasketController extends Controller
         $qte = $request->input('qte');
         $data = $request->session()->all();
 
+        // verif session exist
         if (array_key_exists('panier', $data)) {
 
+            // Verif double depense
             if (in_array($id, $data['panier'])) {
                 return view('welcome');
             } else {
+                // Push le panier
                 $request->session()->push('panier', ['id' => $id, 'qte' => $qte]);
 
                 return view('/welcome');
             }
         }
+        // nouveau tableau
         $data['panier'] = [];
         $request->session()->push('panier', ['id' => $id, 'qte' => $qte]);
         return view('welcome');
@@ -39,6 +43,7 @@ class BasketController extends Controller
             $i = 0;
             $total = 0;
             foreach (session('panier') as $key => $id) {
+                // compare & identifie produit
                 $data[] = Product::find($id['id'])->toArray();
                 $qte[] = $id['qte'];
                 $total = $total + ($data[$i]['price']*$id['qte'])/100;
