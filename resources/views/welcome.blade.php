@@ -16,7 +16,7 @@
 <div class = "Container">
     <div class = "WelcomeMessage">
         Bienvenue sur notre boutique fourre-tout!</br>
-        De tout, de rien, vous y trouverez de quoi assouvir votre soif d'objets inutiles!
+        De tout, de rien, vous y trouverez de quoi assouvir votre soif de tout!
     </div>
     <div class = "Caroussel">
 <div id="carouselExampleControls" class="carousel slide" style="width: 500px; height:300px; data-ride="carousel">
