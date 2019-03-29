@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="links">
-        <a href="{{ url('/admin') }}"> AdminHome</a>
+        <a href="{{ url('/admin') }}"> AdminHome</a>git push
         <a href="{{url('admin/create')}}"> Ajouter un produit</a>
         <a href="{{url('admin/promo/')}}"> gestion promo</a>
         <a href="{{url('admin/categories/')}}"> catégories</a>
