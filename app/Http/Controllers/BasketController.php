@@ -49,6 +49,7 @@ class BasketController extends Controller
                 $total = $total + ($data[$i]['price']*$id['qte'])/100;
                 $i++;
             }
+            
             return view('orders.basket', ['data' => $data, 'qtes' => $qte, 'total' => $total]);
         }
         return view('orders.basket');

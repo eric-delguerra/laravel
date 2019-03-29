@@ -58,6 +58,7 @@
                     <a class="dropdown-item" href="/contacts/Eric">Eric</a>
                 </div>
             </li>
+            @include('admin_nav_bar')
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -102,7 +103,7 @@
                 </div>
             @endif --}}
     {{-- </div> --}}
-    <div class="text-center" style="float:none">
+    <div class="panel-body text-center" style="float:none">
         <p class="lead text-muted">@yield('title')<br> </p>
         <p>@yield('filters')</p>
     </div>

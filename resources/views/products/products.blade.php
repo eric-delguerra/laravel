@@ -6,21 +6,25 @@
 @section('content', 'Liste des produits')
 @section('filters')
 
-    <div class="row tri">
-        <div>
+    <div class="row">
+        <div class="col-md-5">
+
+        <div class="panel-body">
             <a href="/products?price" class="btn btn-outline-info">
                 Trier par prix
             </a>
-        </div>
-        <div>
+        {{-- </div> --}}
+        {{-- <div> --}}
             <a href="/products" class="btn btn-outline-info">
                 Trier par nom
             </a>
-        </div>
-        <div>
+        {{-- </div> --}}
+        {{-- <div> --}}
             <a href="/products?stock" class="btn btn-outline-info">
                 Trier par quantité
             </a>
+        </div>
+
         </div>
     </div>
 

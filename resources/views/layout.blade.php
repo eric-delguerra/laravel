@@ -57,10 +57,8 @@
                     <a class="dropdown-item" href="/contacts/Cedric">Cédric</a>
                     <a class="dropdown-item" href="/contacts/Eric">Eric</a>
                 </div>
-            </li>
-            @if( Auth::user() && Auth::user()->isAdmin === 1)
+            </li>   
             @include('admin_nav_bar')
-            @endif
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
