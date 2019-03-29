@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Orders;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use mysql_xdevapi\Session;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
@@ -68,7 +70,18 @@ class BasketController extends Controller
     public function store(){
         $order = new Orders();
         $order->created_at = new \DateTime();
+        $order->users_id = Auth::user()->id;
+
+        //dd(User::id);
+
+        //$users_id = Auth::user()->id;
+
+        //dd($users_id);
+        //dd($order);
+
         $order->save();
+
+
         $items = \session('panier');
         foreach ($items as $key => $table){
             $data['id_product'] = $table['id'];

@@ -21,11 +21,13 @@
             @php($i++)
         @endforeach
 
-        <h2>Total : {{ $total }}€</h2>
-        <form action="{{ action('BasketController@store') }}" method="post">
-            {{csrf_field()}}
-            <button type="btn">Valider la commande</button>
-        </form></div>
+            <h2>Total : {{ $total }}€</h2>
+                <form action="{{ action('BasketController@store') }}" method="post">
+                    {{csrf_field()}}
+                    <button type="btn">Valider la commande</button>
+                </form>
+            </div>
+            <pre>{{var_dump(session('panier'))}}</pre>
     @else
         <h2>Votre panier est vide</h2>
     @endif
