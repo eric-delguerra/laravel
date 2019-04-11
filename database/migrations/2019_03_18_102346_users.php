@@ -21,6 +21,7 @@ class Users extends Migration
             $table->string('password');
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
+            $table->integer('is_admin');
         });
     }
 
